@@ -1,6 +1,3 @@
-import Column from './column.vue'
-import { withInstall } from '../../utils'
-
-const CColumn = withInstall(Column)
+import CColumn from './column.vue'
 
 export default CColumn

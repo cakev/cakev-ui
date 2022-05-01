@@ -1,25 +1,45 @@
 <template lang="pug">
 .play-box
-	c-input(width="152px", v-model="editor.name", @blur="editName = false", :autofocus="true")
+	c-input(width="152px", v-model="input1", @blur="input2 = false", :autofocus="true")
 	c-label 标签
-	c-svg(type="edit")
+	c-svg(type="edit" color="#fff")
+	c-switch(v-model="switch1")
+	c-drawer(v-model="switch1" width='30%' title="标题")
+		p 111
+		p 111
+		p 111
+		p 111
+		p 111
+		p 111
+	c-tooltip(content="上方" placement="top")
+		c-svg(type="edit" color="#fff")
+	c-tooltip(content="左方" placement="left")
+		c-svg(type="edit" color="#fff")
+	c-tooltip(content="右方" placement="right")
+		c-svg(type="edit" color="#fff")
+	c-tooltip(content="下方" placement="bottom")
+		c-svg(type="edit" color="#fff")
+	c-slider(v-model="slider" label="滑块" :max="50" :min="20" :step="2")
+	c-slider(v-model="slider" label="滑块" :max="50" :min="20" type="opacity")
+	c-slider(v-model="slider" label="滑块" :max="50" :min="20" type="brightness")
+	c-slider(v-model="slider" label="滑块" :max="50" :min="20" type="saturate")
+	c-slider(v-model="slider" label="滑块" :max="50" :min="20" type="hue-rotate")
 </template>
 <script lang="ts">
 export default {
 	name: 'play',
 	data() {
 		return {
-			editor: {
-				name: '',
-			},
-			a: '',
-			editName: true,
+			switch1: false,
+			input1: '',
+			input2: true,
+			slider: 28,
 		}
 	},
 }
 </script>
 <style lang="scss" scoped>
 .play-box {
-	margin: 30px;
+	margin: 80px;
 }
 </style>

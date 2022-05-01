@@ -3,13 +3,16 @@ svg.c-svg(
 	v-else,
 	aria-hidden="true",
 	v-on="$listeners",
-	:style="{ width: `${size}px`, height: `${size}px` }")
+	:style="{ width: `${size}px`, height: `${size}px`,color }")
 	use(:xlink:href="`#cake-ui-${type}`")
 </template>
-<script lang="ts">
+<script>
 export default {
 	name: 'c-svg',
 	props: {
+		color: {
+			type: String,
+		},
 		type: {
 			type: String,
 		},

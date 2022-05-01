@@ -1,4 +1,4 @@
-# @cake/ui
+# @cakev/ui
 
 ![](./public/logo192x192.png)
 

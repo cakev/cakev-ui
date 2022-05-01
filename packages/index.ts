@@ -4,8 +4,13 @@ import CLabel from './components/label'
 import CSvg from './components/svg'
 import CColumn from './components/column'
 import CRow from './components/row'
+import CSwitch from './components/switch'
+import CDrawer from './components/drawer'
+import CTooltip from './components/tooltip'
+import CSlider from './components/slider'
+import './style/index.scss'
 
-const components = [CInput, CLabel, CSvg, CColumn, CRow]
+const components = [CInput, CLabel, CSvg, CColumn, CRow, CSwitch, CDrawer, CTooltip, CSlider]
 
 const install = (Vue: VueConstructor): void => {
 	components.forEach(component => {
@@ -23,4 +28,8 @@ export default {
 	CSvg,
 	CColumn,
 	CRow,
+	CSwitch,
+	CDrawer,
+	CTooltip,
+	CSlider,
 }

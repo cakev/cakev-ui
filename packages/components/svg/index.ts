@@ -1,6 +1,3 @@
-import Svg from './svg.vue'
-import { withInstall } from '../../utils'
-
-const CSvg = withInstall(Svg)
+import CSvg from './svg.vue'
 
 export default CSvg

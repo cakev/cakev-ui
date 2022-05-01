@@ -1,6 +1,3 @@
-import Row from './row.vue'
-import { withInstall } from '../../utils'
-
-const CRow = withInstall(Row)
+import CRow from './row.vue'
 
 export default CRow

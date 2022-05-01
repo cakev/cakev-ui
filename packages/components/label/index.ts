@@ -1,6 +1,3 @@
-import Label from './label.vue'
-import { withInstall } from '../../utils'
-
-const CLabel = withInstall(Label)
+import CLabel from './label.vue'
 
 export default CLabel

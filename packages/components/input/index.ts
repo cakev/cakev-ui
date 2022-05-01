@@ -1,6 +1,3 @@
-import Input from './input.vue'
-import { withInstall } from '../../utils'
-
-const CInput = withInstall(Input)
+import CInput from './input.vue'
 
 export default CInput
