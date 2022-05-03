@@ -8,9 +8,10 @@ import CSwitch from './components/switch'
 import CDrawer from './components/drawer'
 import CTooltip from './components/tooltip'
 import CSlider from './components/slider'
+import CCollapse from './components/collapse'
 import './style/index.scss'
 
-const components = [CInput, CLabel, CSvg, CColumn, CRow, CSwitch, CDrawer, CTooltip, CSlider]
+const components = [CInput, CLabel, CSvg, CColumn, CRow, CSwitch, CDrawer, CTooltip, CSlider, CCollapse]
 
 const install = (Vue: VueConstructor): void => {
 	components.forEach(component => {
@@ -32,4 +33,5 @@ export default {
 	CDrawer,
 	CTooltip,
 	CSlider,
+	CCollapse,
 }
