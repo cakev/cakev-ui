@@ -10,7 +10,7 @@
 				c-svg.c-collapse-default-title-icon(
 					:type="item.icon",
 					@click="handleIconClick(item.icon)",
-					size="14",
+					:size="14",
 					@click.stop)
 	.c-collapse-default-content(
 		:class="{ active }",
