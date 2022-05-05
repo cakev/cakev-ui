@@ -2,7 +2,7 @@ const path = require('path')
 const pkg = require('./package.json')
 const isProduction = process.env.NODE_ENV === 'production'
 
-function resolve(dir) {
+const resolve = dir => {
 	return path.join(__dirname, dir)
 }
 
@@ -44,6 +44,7 @@ module.exports = {
 		}
 	},
 	chainWebpack: config => {
+		config.resolve.alias.set('@', resolve('packages'))
 		config.plugin('define').tap(args => {
 			args[0]['process.env'].version = JSON.stringify(pkg.version)
 			return args
@@ -61,6 +62,7 @@ module.exports = {
 			})
 			.end()
 		if (isProduction) {
+			config.plugins.delete('prefetch')
 			config.plugins.delete('prefetch')
 		} else {
 			config.resolve.symlinks(true)

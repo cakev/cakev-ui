@@ -16,7 +16,7 @@ c-row
 		c-input(v-model="currentVal" width="62px", height="26px")
 </template>
 <script>
-import { on, off } from '../../utils'
+import { on, off } from '@cakev/util'
 
 export default {
 	name: 'c-slider',
