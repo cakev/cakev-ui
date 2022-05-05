@@ -46,7 +46,7 @@ export default {
 	},
 }
 </script>
-<style lang="scss" scoped>
+<style lang="scss">
 .c-collapse-default-title-icon {
 	color: rgb(250, 250, 250);
 	cursor: pointer;

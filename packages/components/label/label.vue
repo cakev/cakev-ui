@@ -7,7 +7,7 @@ export default {
 	name: 'c-label',
 }
 </script>
-<style lang="scss" scoped>
+<style lang="scss">
 .c-label {
 	display: block;
 	min-width: 60px;

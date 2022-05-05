@@ -28,7 +28,7 @@ export default {
 	},
 }
 </script>
-<style lang="scss" scoped>
+<style lang="scss">
 .c-switch {
 	position: relative;
 	width: 28px;

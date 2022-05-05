@@ -48,7 +48,7 @@ export default {
 	},
 }
 </script>
-<style lang="scss" scoped>
+<style lang="scss">
 .c-drawer {
 	position: relative;
 	z-index: 9999;

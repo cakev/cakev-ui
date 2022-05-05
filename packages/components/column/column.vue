@@ -12,7 +12,7 @@ export default {
 	},
 }
 </script>
-<style lang="scss" scoped>
+<style lang="scss">
 .c-column {
 	display: flex;
 	flex-direction: column;
