@@ -21,8 +21,9 @@ const install = (Vue: VueConstructor): void => {
 	req.keys().map(req)
 }
 
-export default {
-	version: process.env.version,
+const version = process.env.version
+const ui = {
+	version,
 	install,
 	CInput,
 	CLabel,
@@ -35,3 +36,12 @@ export default {
 	CSlider,
 	CCollapse,
 }
+
+if (window !== undefined) {
+	if (!window['cakeV-ui']) {
+		window['cakeV-ui'] = ui
+	}
+}
+
+export { version, install, CInput, CLabel, CSvg, CColumn, CRow, CSwitch, CDrawer, CTooltip, CSlider, CCollapse }
+export default ui
