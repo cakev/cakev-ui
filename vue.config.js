@@ -33,6 +33,7 @@ module.exports = {
 						commonjs2: 'vue',
 						amd: 'vue',
 					},
+					'@cakev/util': 'cakeV-util',
 				},
 			]
 		} else {
