@@ -26,6 +26,12 @@
 		c-slider(v-model="slider" label="滑块" :max="50" :min="20" type="brightness")
 		c-slider(v-model="slider" label="滑块" :max="50" :min="20" type="saturate")
 		c-slider(v-model="slider" label="滑块" :max="50" :min="20" type="hue-rotate")
+	c-control(label="aa" title="ddd")
+		template(slot="bottom")
+			c-code
+	c-control(label="aa" title="ddd")
+		template(slot="right")
+			c-input
 </template>
 <script lang="ts">
 export default {

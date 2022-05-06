@@ -52,6 +52,7 @@ export default {
 	cursor: pointer;
 }
 .c-collapse-default-content {
+	padding: 10px;
 	overflow: hidden;
 	transition: all 0.3s;
 

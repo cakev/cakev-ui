@@ -9,9 +9,24 @@ import CDrawer from './components/drawer'
 import CTooltip from './components/tooltip'
 import CSlider from './components/slider'
 import CCollapse from './components/collapse'
+import CControl from './components/control'
+import CCode from './components/code'
 import './style/index.scss'
 
-const components = [CInput, CLabel, CSvg, CColumn, CRow, CSwitch, CDrawer, CTooltip, CSlider, CCollapse]
+const components = [
+	CInput,
+	CLabel,
+	CSvg,
+	CColumn,
+	CRow,
+	CSwitch,
+	CDrawer,
+	CTooltip,
+	CSlider,
+	CCollapse,
+	CControl,
+	CCode,
+]
 
 const install = (Vue: VueConstructor): void => {
 	components.forEach(component => {
@@ -25,6 +40,12 @@ const version = process.env.version
 const ui = {
 	version,
 	install,
+	...components,
+}
+
+export {
+	version,
+	install,
 	CInput,
 	CLabel,
 	CSvg,
@@ -35,13 +56,7 @@ const ui = {
 	CTooltip,
 	CSlider,
 	CCollapse,
+	CControl,
+	CCode,
 }
-
-if (window !== undefined) {
-	if (!window['cakeV-ui']) {
-		window['cakeV-ui'] = ui
-	}
-}
-
-export { version, install, CInput, CLabel, CSvg, CColumn, CRow, CSwitch, CDrawer, CTooltip, CSlider, CCollapse }
 export default ui

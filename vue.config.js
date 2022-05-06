@@ -17,6 +17,8 @@ module.exports = {
 		port: 3000,
 		hot: true,
 		open: true,
+		historyApiFallback: true,
+		disableHostCheck: true,
 	},
 	css: {
 		extract: process.env.VUE_APP_BUILD_MODE === 'NPM',
@@ -33,7 +35,7 @@ module.exports = {
 						commonjs2: 'vue',
 						amd: 'vue',
 					},
-					'@cakev/util': 'cakeV-util',
+					'@cakev/util': '@cakev/util',
 				},
 			]
 		} else {

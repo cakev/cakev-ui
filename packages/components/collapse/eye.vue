@@ -91,6 +91,7 @@ export default {
 	cursor: pointer;
 }
 .c-collapse-eye-content {
+	padding: 10px;
 	overflow: hidden;
 	transition: all 0.3s;
 
