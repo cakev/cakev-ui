@@ -28,7 +28,7 @@
 		c-slider(v-model="slider" label="滑块" :max="50" :min="20" type="hue-rotate")
 	c-control(label="aa" title="ddd")
 		template(slot="bottom")
-			c-code
+			c-code(:code="code" :update:code="updateCode")
 	c-control(label="aa" title="ddd")
 		template(slot="right")
 			c-input
@@ -43,7 +43,13 @@ export default {
 			input2: true,
 			slider: 28,
 			enable1: false,
+			code: 'hello wolrd',
 		}
+	},
+	methods: {
+		updateCode(val) {
+			console.log(val)
+		},
 	},
 }
 </script>

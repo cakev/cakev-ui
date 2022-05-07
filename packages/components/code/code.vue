@@ -16,19 +16,23 @@ export default {
 	},
 	props: {
 		label: {
+			type: String,
 			default: '代码',
 		},
 		lang: {
+			type: String,
 			default: 'javascript',
 		},
-		title: {
-			default: '全屏模式',
-		},
 		theme: {
+			type: String,
 			default: 'idle_fingers',
 		},
 		show: {
+			type: Boolean,
 			default: true,
+		},
+		code: {
+			type: String,
 		},
 	},
 	computed: {
