@@ -91,12 +91,11 @@ export default {
 	cursor: pointer;
 }
 .c-collapse-eye-content {
-	padding: 10px;
 	overflow: hidden;
 	transition: all 0.3s;
 
 	&.active {
-		margin-top: 10px;
+		padding: 10px;
 	}
 }
 

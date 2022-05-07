@@ -52,12 +52,10 @@ export default {
 	cursor: pointer;
 }
 .c-collapse-default-content {
-	padding: 10px;
 	overflow: hidden;
-	transition: all 0.3s;
 
 	&.active {
-		margin-top: 10px;
+		padding: 10px;
 	}
 }
 

@@ -1,10 +1,10 @@
 <template lang="pug">
-c-column(align="start")
-	c-row.c-control
+c-column.c-control(align="start")
+	c-row.c-control-top
 		c-row.label
 			span(style="margin-right: 5px") {{ label }}
 			c-tooltip(:content="title", placement="top", v-if="title")
-				c-svg.pos-r.pointer(:type="icon", :size="16", :style="{ top: '3px' }")
+				c-svg.pos-r.pointer(:type="icon", :size="16")
 		c-row.c-control-right
 			slot(name="right")
 	.c-control-bottom
@@ -32,6 +32,9 @@ export default {
 	width: 100%;
 }
 .c-control {
+	margin: 10px 0;
+}
+.c-control-top {
 	width: 100%;
 	min-height: 32px;
 
