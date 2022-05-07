@@ -1,6 +1,6 @@
 <template lang="pug">
 editor(
-	v-model="syncedCode",
+	v-model="currentVal",
 	@init="editorInit",
 	:lang="lang",
 	:theme="theme",
@@ -31,18 +31,21 @@ export default {
 			type: Boolean,
 			default: true,
 		},
-		code: {
+		value: {
 			type: String,
 		},
 	},
-	computed: {
-		syncedCode: {
-			get() {
-				return this.code
-			},
-			set(val) {
-				this.$emit('update:code', val)
-			},
+	data(props) {
+		return {
+			currentVal: props.value,
+		}
+	},
+	watch: {
+		value(val) {
+			this.currentVal = val
+		},
+		currentVal(val) {
+			this.$emit('input', val)
 		},
 	},
 	methods: {

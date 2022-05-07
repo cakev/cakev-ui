@@ -41,7 +41,8 @@
 	c-control(label="aa" title="ddd")
 		template(slot="bottom")
 			h2 c-code
-			c-code(:code="code" :update:code="updateCode")
+			c-code(v-model="code")
+			c-input(v-model="code")
 	c-control(label="aa" title="ddd")
 		template(slot="right")
 			c-input

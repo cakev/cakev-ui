@@ -92,7 +92,6 @@ export default {
 }
 .c-collapse-eye-content {
 	overflow: hidden;
-	transition: all 0.3s;
 
 	&.active {
 		padding: 10px;
