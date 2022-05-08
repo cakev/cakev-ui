@@ -2,7 +2,7 @@
 label.c-label
 	slot
 </template>
-<script>
+<script lang="ts">
 export default {
 	name: 'c-label',
 }

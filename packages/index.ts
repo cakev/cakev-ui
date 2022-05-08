@@ -11,6 +11,8 @@ import CSlider from './components/slider'
 import CCollapse from './components/collapse'
 import CControl from './components/control'
 import CCode from './components/code'
+import CSelect from './components/select'
+import CSelectOption from './components/select-option'
 import './style/index.scss'
 
 const components = [
@@ -26,6 +28,8 @@ const components = [
 	CCollapse,
 	CControl,
 	CCode,
+	CSelect,
+	CSelectOption,
 ]
 
 const install = (Vue: VueConstructor): void => {
@@ -58,5 +62,7 @@ export {
 	CCollapse,
 	CControl,
 	CCode,
+	CSelect,
+	CSelectOption,
 }
 export default ui

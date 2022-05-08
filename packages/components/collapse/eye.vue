@@ -17,7 +17,7 @@
 		:style="{ height: active ? '' : '0' }")
 		slot(v-if="enable")
 </template>
-<script>
+<script lang="ts">
 export default {
 	name: 'c-collapse-eye',
 	props: {
@@ -64,13 +64,13 @@ export default {
 		},
 	},
 	methods: {
-		handleClick() {
+		handleClick(): void {
 			if (this.syncedEnable) {
 				this.active = !this.active
 			}
 		},
 
-		handleIconClick(e, value) {
+		handleIconClick(e, value): void {
 			e.preventDefault()
 			e.stopPropagation()
 			if (value === 'eye') {

@@ -46,6 +46,9 @@
 	c-control(label="aa" title="ddd")
 		template(slot="right")
 			c-input
+	c-select
+		c-select-option(label="1111" :value="1")
+		c-select-option(label="2222" :value="2")
 </template>
 <script lang="ts">
 export default {

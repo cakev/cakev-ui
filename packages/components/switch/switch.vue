@@ -1,7 +1,7 @@
 <template lang="pug">
 .c-switch(@click="handleClick" :class="{active:currentVal}")
 </template>
-<script>
+<script lang="ts">
 export default {
 	name: 'c-switch',
 	props: {

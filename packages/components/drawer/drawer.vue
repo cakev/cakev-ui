@@ -10,7 +10,7 @@
 			.c-drawer-body
 				slot
 </template>
-<script>
+<script lang="ts">
 export default {
 	name: 'c-drawer',
 	props: {
@@ -41,7 +41,7 @@ export default {
 		},
 	},
 	methods: {
-		close() {
+		close(): void {
 			this.currentVal = false
 			this.$emit('input', false)
 		},

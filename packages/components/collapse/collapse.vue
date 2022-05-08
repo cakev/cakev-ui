@@ -6,7 +6,7 @@ CCollapseEye(v-else-if="type==='eye'" v-bind="{...$props,...$attrs}",v-on="$list
 CCollapseList(v-else v-bind="{...$props,...$attrs}",v-on="$listeners")
 	slot
 </template>
-<script>
+<script lang="ts">
 import CCollapseDefault from './default.vue'
 import CCollapseEye from './eye.vue'
 import CCollapseList from './list.vue'

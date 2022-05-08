@@ -13,7 +13,7 @@ c-row.c-input(:style="{width,height}" :class="{'c-input-focus':focus,'c-input-di
 	.c-input-append(v-if="iconAppend")
 		c-svg(:type="iconAppend" :size="14" @click="iconAppendClick")
 </template>
-<script>
+<script lang="ts">
 export default {
 	name: 'c-input',
 	props: {
@@ -55,14 +55,14 @@ export default {
 		},
 	},
 	methods: {
-		iconAppendClick(e) {
+		iconAppendClick(e): void {
 			this.$emit('icon-append-click', e)
 		},
-		handleFocus(e) {
+		handleFocus(e): void {
 			this.focus = true
 			this.$emit('focus', e)
 		},
-		handleBlur(e) {
+		handleBlur(e): void {
 			this.focus = false
 			this.$emit('blur', e)
 		},
@@ -71,6 +71,7 @@ export default {
 </script>
 <style lang="scss">
 .c-input {
+	height: 28px;
 	font-size: 14px;
 	background-color: #181b24;
 	border: 1px solid #393b4a;
@@ -91,6 +92,7 @@ export default {
 	}
 	input {
 		width: 100%;
+		height: 28px;
 		padding: 4px 8px;
 		font-size: inherit;
 		color: rgb(191, 191, 191);

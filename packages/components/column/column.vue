@@ -2,7 +2,7 @@
 .c-column(:style="{ alignItems: align }")
 	slot
 </template>
-<script>
+<script lang="ts">
 export default {
 	name: 'c-column',
 	props: {

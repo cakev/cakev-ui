@@ -7,7 +7,7 @@
 			.c-tooltip-arrow(:class="`c-tooltip-arrow-${placement}`")
 			.c-tooltip-inner {{content}}
 </template>
-<script>
+<script lang="ts">
 export default {
 	name: 'c-tooltip',
 	props: {

@@ -6,7 +6,7 @@ svg.c-svg(
 	:style="{ width: `${size}px`, height: `${size}px`,color }")
 	use(:xlink:href="`#cake-ui-${type}`")
 </template>
-<script>
+<script lang="ts">
 export default {
 	name: 'c-svg',
 	props: {

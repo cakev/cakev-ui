@@ -17,7 +17,7 @@
 		:style="{ height: active ? '' : '0' }")
 		slot
 </template>
-<script>
+<script lang="ts">
 export default {
 	name: 'c-collapse-default',
 	props: {
@@ -39,7 +39,7 @@ export default {
 		}
 	},
 	methods: {
-		handleIconClick(value) {
+		handleIconClick(value): void {
 			this.active = true
 			this.$emit('icon-click', value)
 		},

@@ -6,7 +6,7 @@ editor(
 	:theme="theme",
 	height="200")
 </template>
-<script>
+<script lang="ts">
 const editor = require('vue2-ace-editor')
 
 export default {
@@ -41,10 +41,10 @@ export default {
 		}
 	},
 	watch: {
-		value(val) {
+		value(val): void {
 			this.currentVal = val
 		},
-		currentVal(val) {
+		currentVal(val): void {
 			this.$emit('input', val)
 		},
 	},
@@ -85,7 +85,9 @@ export default {
 .ace-idle-fingers {
 	background-color: rgb(24, 27, 36) !important;
 	border: 1px solid #393b4a;
-
+	.ace_print-margin {
+		width: 0 !important;
+	}
 	.ace_gutter {
 		background-color: rgb(24, 27, 36) !important;
 		border-right: 1px solid #393b4a;

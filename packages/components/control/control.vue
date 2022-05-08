@@ -10,7 +10,7 @@ c-column.c-control(align="start")
 	.c-control-bottom
 		slot(name="bottom")
 </template>
-<script>
+<script lang="ts">
 export default {
 	name: 'c-control',
 	props: {
