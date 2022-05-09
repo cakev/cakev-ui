@@ -46,7 +46,7 @@
 	c-control(label="aa" title="ddd")
 		template(slot="right")
 			c-input
-	c-select
+	c-select(v-model="select")
 		c-select-option(label="1111" :value="1")
 		c-select-option(label="2222" :value="2")
 </template>
@@ -59,6 +59,7 @@ export default {
 			input1: '111',
 			input2: true,
 			slider: 28,
+			select: 1,
 			enable1: false,
 			code: 'hello wolrd',
 		}

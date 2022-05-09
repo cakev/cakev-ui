@@ -1,7 +1,9 @@
 <template lang="pug">
-.c-option {{  label  }}
+.c-option(@click="handleClick") {{  label  }}
 </template>
 <script lang="ts">
+import { findComponentUpward } from '@cakev/util'
+
 export default {
 	name: 'c-select-option',
 	props: {
@@ -10,6 +12,14 @@ export default {
 		},
 		value: {
 			type: [String, Number],
+		},
+	},
+	methods: {
+		handleClick(): void {
+			const parent = findComponentUpward(this, 'c-select')
+			parent.handleChange(this.value, this.label)
+			parent.init(this.value)
+			parent.taggerList()
 		},
 	},
 }

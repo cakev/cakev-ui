@@ -12,6 +12,7 @@ module.exports = {
 			entry: './play/main.ts',
 		},
 	},
+	productionSourceMap: false,
 	assetsDir: './',
 	devServer: {
 		port: 3000,
@@ -27,23 +28,11 @@ module.exports = {
 	configureWebpack: config => {
 		config.resolve.extensions = ['.js', '.vue', '.json', '.ts', '.tsx']
 		if (process.env.VUE_APP_BUILD_MODE === 'NPM') {
-			config.externals = [
-				{
-					vue: {
-						root: 'Vue',
-						commonjs: 'vue',
-						commonjs2: 'vue',
-						amd: 'vue',
-					},
-					'@cakev/util': '@cakev/util',
-				},
-			]
-		} else {
-			config.externals = [
-				{
-					vue: 'Vue',
-				},
-			]
+			// config.externals = [
+			// 	{
+			// 		'@cakev/util': '@cakev/util',
+			// 	},
+			// ]
 		}
 	},
 	chainWebpack: config => {
@@ -65,7 +54,6 @@ module.exports = {
 			})
 			.end()
 		if (isProduction) {
-			config.plugins.delete('prefetch')
 			config.plugins.delete('prefetch')
 		} else {
 			config.resolve.symlinks(true)

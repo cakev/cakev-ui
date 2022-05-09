@@ -1,11 +1,12 @@
 <template lang="pug">
 c-row.c-select(:class="{'c-select-disabled':disabled,'c-select-focus':focus}" v-click-outside="taggerList")
-	.c-select-content(@click="taggerList" @click.stop) {{value}}
+	.c-select-content(@click="taggerList" @click.stop) {{label}}
 	c-svg.c-select-icon(type="arrow-down" :size="14" @click="taggerList" @click.stop)
 	.c-select-option-list(v-show="showList")
 		slot
 </template>
 <script lang="ts">
+import { findComponentsDownward } from '@cakev/util'
 // @ts-ignore
 import ClickOutside from 'vue-click-outside'
 
@@ -24,6 +25,8 @@ export default {
 			currentVal: props.value,
 			showList: false,
 			focus: false,
+			label: props.value,
+			childrens: [],
 		}
 	},
 	watch: {
@@ -37,6 +40,25 @@ export default {
 			this.focus = !this.focus
 			this.showList = !this.showList
 		},
+		init(v) {
+			this.childrens = findComponentsDownward(this, 'c-select-option')
+			if (this.childrens) {
+				this.childrens.forEach(child => {
+					child.active = v ? v === child.value : this.currentVal === child.value
+					child.value === this.currentVal ? (this.label = child.label) : void 0
+				})
+			}
+		},
+		handleChange(value, label) {
+			if (this.disabled) return
+			this.label = label
+			this.currentVal = value
+			this.$emit('on-change', value)
+			this.$emit('input', value)
+		},
+	},
+	mounted() {
+		this.init(this.value)
 	},
 }
 </script>
@@ -44,8 +66,8 @@ export default {
 .c-select-content {
 	position: relative;
 	width: 100%;
-	height: 100%;
-	padding-right: 40px;
+	height: 28px;
+	padding: 4px 40px 4px 8px;
 	overflow: hidden;
 	color: rgb(191, 191, 191);
 	text-overflow: ellipsis;
