@@ -13,6 +13,7 @@ import CControl from './components/control'
 import CCode from './components/code'
 import CSelect from './components/select'
 import CSelectOption from './components/select-option'
+import CBadge from './components/badge'
 import './style/index.scss'
 
 const components = [
@@ -30,6 +31,7 @@ const components = [
 	CCode,
 	CSelect,
 	CSelectOption,
+	CBadge,
 ]
 
 const install = (Vue: VueConstructor): void => {
@@ -45,6 +47,10 @@ const ui = {
 	version,
 	install,
 	...components,
+}
+
+if (typeof window !== 'undefined' && window.Vue) {
+	install(window.Vue)
 }
 
 export {
@@ -64,5 +70,6 @@ export {
 	CCode,
 	CSelect,
 	CSelectOption,
+	CBadge,
 }
 export default ui

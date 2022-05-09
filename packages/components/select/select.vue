@@ -1,5 +1,5 @@
 <template lang="pug">
-c-row.c-select(:class="{'c-select-disabled':disabled,'c-select-focus':focus}" v-click-outside="taggerList")
+c-row.c-select(:class="{'c-select-disabled':disabled,'c-select-focus':focus}" v-click-outside="hideList")
 	.c-select-content(@click="taggerList" @click.stop) {{label}}
 	c-svg.c-select-icon(type="arrow-down" :size="14" @click="taggerList" @click.stop)
 	.c-select-option-list(v-show="showList")
@@ -35,6 +35,10 @@ export default {
 		},
 	},
 	methods: {
+		hideList(): void {
+			this.focus = false
+			this.showList = false
+		},
 		taggerList(): void {
 			if (this.disabled) return
 			this.focus = !this.focus

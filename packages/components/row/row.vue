@@ -1,5 +1,5 @@
 <template lang="pug">
-.c-row(:style="{ alignItems: align }")
+.c-row(:style="{ alignItems: align }" v-bind="{ ...$props, ...$attrs }", v-on="$listeners",)
 	slot
 </template>
 <script lang="ts">
