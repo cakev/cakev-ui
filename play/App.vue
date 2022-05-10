@@ -1,5 +1,8 @@
 <template lang="pug">
 .play-box
+	h2 c-color
+	c-color(v-model="color")
+	c-color(v-model="color" :disabled="true")
 	h2 c-input
 	c-input(v-model="input1", @blur="input2 = false", :autofocus="true")
 	c-input(width="152px", v-model="input1", append="W")
@@ -55,6 +58,7 @@ export default {
 	name: 'play',
 	data() {
 		return {
+			color: '#ffffff',
 			switch1: false,
 			input1: '111',
 			input2: true,

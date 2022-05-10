@@ -75,7 +75,7 @@ export default {
 	font-size: 14px;
 	background-color: #181b24;
 	border: 1px solid #393b4a;
-	border-radius: 2px;
+	border-radius: 4px;
 	&.c-input-focus {
 		border-color: #2491f7;
 	}

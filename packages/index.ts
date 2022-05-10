@@ -14,6 +14,7 @@ import CCode from './components/code'
 import CSelect from './components/select'
 import CSelectOption from './components/select-option'
 import CBadge from './components/badge'
+import CColor from './components/color'
 import './style/index.scss'
 
 const components = [
@@ -32,6 +33,7 @@ const components = [
 	CSelect,
 	CSelectOption,
 	CBadge,
+	CColor,
 ]
 
 const install = (Vue: VueConstructor): void => {
@@ -71,5 +73,6 @@ export {
 	CSelect,
 	CSelectOption,
 	CBadge,
+	CColor,
 }
 export default ui

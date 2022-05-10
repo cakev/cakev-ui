@@ -36,6 +36,7 @@ export default {
 	font-size: 14px;
 	line-height: normal;
 	color: rgb(191, 191, 191);
+	text-align: left;
 	text-overflow: ellipsis;
 	white-space: nowrap;
 	list-style: none;

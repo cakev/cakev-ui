@@ -81,6 +81,7 @@ export default {
 	background-color: #2d2f38;
 	border-top: 1px solid rgb(57, 59, 74);
 	border-bottom: 1px solid rgb(57, 59, 74);
+	border-radius: 4px;
 
 	label {
 		margin-left: 10px;

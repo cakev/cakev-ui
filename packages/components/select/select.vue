@@ -1,7 +1,7 @@
 <template lang="pug">
-c-row.c-select(:class="{'c-select-disabled':disabled,'c-select-focus':focus}" v-click-outside="hideList")
-	.c-select-content(@click="taggerList" @click.stop) {{label}}
-	c-svg.c-select-icon(type="arrow-down" :size="14" @click="taggerList" @click.stop)
+c-row.c-select(:class="{'c-select-disabled':disabled,'c-select-focus':focus}" v-click-outside="hidePanel")
+	.c-select-content(@click="taggerPanel" @click.stop) {{label}}
+	c-svg.c-select-icon(type="arrow-down" :size="14" @click="taggerPanel" @click.stop)
 	.c-select-option-list(v-show="showList")
 		slot
 </template>
@@ -35,11 +35,11 @@ export default {
 		},
 	},
 	methods: {
-		hideList(): void {
+		hidePanel(): void {
 			this.focus = false
 			this.showList = false
 		},
-		taggerList(): void {
+		taggerPanel(): void {
 			if (this.disabled) return
 			this.focus = !this.focus
 			this.showList = !this.showList
@@ -74,6 +74,7 @@ export default {
 	padding: 4px 40px 4px 8px;
 	overflow: hidden;
 	color: rgb(191, 191, 191);
+	text-align: left;
 	text-overflow: ellipsis;
 	white-space: nowrap;
 }
@@ -95,8 +96,10 @@ export default {
 	font-size: 14px;
 	background-color: #181b24;
 	border: 1px solid #393b4a;
-	border-radius: 2px;
+	border-radius: 4px;
+
 	&.c-select-focus {
+		z-index: 9999;
 		border-color: #2491f7;
 	}
 	&:hover {
