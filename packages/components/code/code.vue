@@ -1,5 +1,5 @@
 <template lang="pug">
-editor(
+editor.c-code(
 	v-model="currentVal",
 	@init="editorInit",
 	:lang="lang",
@@ -62,32 +62,41 @@ export default {
 }
 </script>
 <style lang="scss">
-.ace_scrollbar-v {
-	&::-webkit-scrollbar {
-		width: 4px;
-		height: 1px;
-		transition: all 0.3s;
-	}
-
-	&::-webkit-scrollbar-thumb {
-		background: rgba(83, 83, 83, 1);
-		border-radius: 10px;
-		transition: all 0.3s;
-	}
-
-	&::-webkit-scrollbar-track {
-		background: rgba(237, 237, 237, 1);
-		border-radius: 10px;
-		transition: all 0.3s;
-	}
-}
-
-.ace-idle-fingers {
+.c-code {
 	background-color: rgb(24, 27, 36) !important;
 	border: 1px solid #393b4a;
+	border-radius: 4px;
+	&:hover {
+		border-color: #2491f7;
+	}
+	&.ace_focus {
+		border-color: #2491f7;
+	}
+
+	.ace_scrollbar-v {
+		&::-webkit-scrollbar {
+			width: 4px;
+			height: 1px;
+			transition: all 0.3s;
+		}
+
+		&::-webkit-scrollbar-thumb {
+			background: rgba(83, 83, 83, 1);
+			border-radius: 10px;
+			transition: all 0.3s;
+		}
+
+		&::-webkit-scrollbar-track {
+			background: rgba(237, 237, 237, 1);
+			border-radius: 10px;
+			transition: all 0.3s;
+		}
+	}
+
 	.ace_print-margin {
 		width: 0 !important;
 	}
+
 	.ace_gutter {
 		background-color: rgb(24, 27, 36) !important;
 		border-right: 1px solid #393b4a;

@@ -1,5 +1,5 @@
 <template lang="pug">
-.c-tooltip(@mouseenter="handleShowPopper" @mouseleave="handleClosePopper" v-on="$listeners")
+.c-tooltip(@mouseenter="handleShowPopper" @mouseleave="handleClosePopper" v-on="$listeners" :class="{'c-tooltip-hover':visible}")
 	.c-tooltip-body
 		slot
 	transition(name="c-tooltip-fade")
@@ -40,6 +40,9 @@ export default {
 	position: relative;
 	display: inline-block;
 	cursor: pointer;
+	&.c-tooltip-hover {
+		z-index: 9999;
+	}
 }
 .c-tooltip-body {
 	display: flex;

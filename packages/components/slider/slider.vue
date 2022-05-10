@@ -1,7 +1,7 @@
 <template lang="pug">
-c-row
+c-row.c-slider
 	c-label {{label}}
-	c-row.c-slider
+	c-row(:style="{flex:1}")
 		.c-slider-content(ref="slider")
 			.c-slider-wrap(:class="`c-slider-wrap-${type}`")
 				.c-slider-wrap-bar(:style="{width:position}")
@@ -119,9 +119,6 @@ export default {
 }
 </script>
 <style lang="scss">
-.c-slider {
-	flex: 1;
-}
 .c-slider-content {
 	flex: 1;
 	margin-right: 10px;
@@ -139,6 +136,8 @@ export default {
 	}
 }
 .c-slider-wrap-bar {
+	position: absolute;
+	left: 0;
 	height: 4px;
 }
 .c-slider-wrap-button {

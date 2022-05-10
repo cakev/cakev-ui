@@ -1,14 +1,16 @@
 <template lang="pug">
 c-row.c-input(:style="{width,height}" :class="{'c-input-focus':focus,'c-input-disabled':disabled}")
-	input(
-		:autofocus="autofocus",
-		:disabled="disabled",
-		:value="currentVal",
-		:style="{ display }",
-		@focus="handleFocus",
-		@blur="handleBlur",
-		@change="$emit('change', $event)",
-		@input="$emit('input', $event.target.value)")
+	.c-input-content
+		.c-input-placeholder(v-if="!currentVal") {{placeholder}}
+		input(
+			:autofocus="autofocus",
+			:disabled="disabled",
+			:value="currentVal",
+			:style="{ display }",
+			@focus="handleFocus",
+			@blur="handleBlur",
+			@change="$emit('change', $event)",
+			@input="$emit('input', $event.target.value)")
 	.c-input-append(v-if="append") {{append}}
 	.c-input-append(v-if="iconAppend")
 		c-svg(:type="iconAppend" :size="14" @click="iconAppendClick")
@@ -17,6 +19,10 @@ c-row.c-input(:style="{width,height}" :class="{'c-input-focus':focus,'c-input-di
 export default {
 	name: 'c-input',
 	props: {
+		placeholder: {
+			type: String,
+			default: '',
+		},
 		iconAppend: {
 			type: String,
 			default: '',
@@ -70,6 +76,21 @@ export default {
 }
 </script>
 <style lang="scss">
+.c-input-content {
+	position: relative;
+	width: 100%;
+}
+.c-input-placeholder {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	padding: 4px 8px;
+	color: #393b4a;
+	text-align: left;
+	pointer-events: none;
+}
 .c-input {
 	height: 28px;
 	font-size: 14px;

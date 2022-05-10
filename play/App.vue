@@ -1,9 +1,13 @@
 <template lang="pug">
 .play-box
+	h2 c-button
+	c-button 按钮
+	c-button(type="primary" :loading="true") 按钮
 	h2 c-color
 	c-color(v-model="color")
 	c-color(v-model="color" :disabled="true")
 	h2 c-input
+	c-input(placeholder="请输入" v-model="input3")
 	c-input(v-model="input1", @blur="input2 = false", :autofocus="true")
 	c-input(width="152px", v-model="input1", append="W")
 	c-input(width="152px", v-model="input1", append="W" :disabled="true")
@@ -61,6 +65,7 @@ export default {
 			color: '#ffffff',
 			switch1: false,
 			input1: '111',
+			input3: '',
 			input2: true,
 			slider: 28,
 			select: 1,

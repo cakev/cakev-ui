@@ -19,7 +19,7 @@ export default {
 			const parent = findComponentUpward(this, 'c-select')
 			parent.handleChange(this.value, this.label)
 			parent.init(this.value)
-			parent.taggerList()
+			parent.taggerPanel()
 		},
 	},
 }
