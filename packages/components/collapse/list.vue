@@ -1,5 +1,5 @@
 <template lang="pug">
-.c-collapse-list
+.c-collapse.c-collapse-list
 	c-collapse-default(:title="title", :icon="icon", @icon-click="handleClick")
 		.c-collapse-list-tab(v-if="list.length > 0")
 			span(@click="handleClickTab(i)", v-for="(v, i) in list", :class="{ active: index === i }") {{ prefix }}{{ i + 1 }}

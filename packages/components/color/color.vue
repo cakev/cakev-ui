@@ -70,6 +70,7 @@ export default {
 	height: 12px;
 	margin-right: 10px;
 	cursor: pointer;
+	border: 1px solid #393b4a;
 }
 .c-color-panel {
 	position: absolute;

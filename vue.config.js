@@ -28,11 +28,7 @@ module.exports = {
 	configureWebpack: config => {
 		config.resolve.extensions = ['.js', '.vue', '.json', '.ts', '.tsx']
 		if (process.env.VUE_APP_BUILD_MODE === 'NPM') {
-			// config.externals = [
-			// 	{
-			// 		'@cakev/util': '@cakev/util',
-			// 	},
-			// ]
+			// config.externals = [{}]
 		}
 	},
 	chainWebpack: config => {

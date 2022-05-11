@@ -26,3 +26,63 @@ export default {
 	},
 }
 </script>
+<style lang="scss">
+.c-collapse {
+	+ .c-collapse {
+		.c-collapse-title {
+			border-top: none;
+		}
+	}
+}
+.c-collapse-title-icon {
+	color: rgb(250, 250, 250);
+	cursor: pointer;
+}
+.c-collapse-content {
+	overflow: hidden;
+
+	&.active {
+		padding: 10px;
+	}
+}
+.c-collapse-title-right {
+	display: flex;
+	flex-direction: row;
+	margin-right: 10px;
+	margin-left: auto;
+}
+.c-collapse-title {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	height: 36px;
+	line-height: 36px;
+	cursor: pointer;
+	background-color: #2d2f38;
+	border-top: 1px solid rgb(57, 59, 74);
+	border-bottom: 1px solid rgb(57, 59, 74);
+
+	label {
+		margin-left: 10px;
+		font-size: 12px;
+		line-height: 36px;
+		color: rgb(250, 250, 250);
+		cursor: pointer;
+		user-select: none;
+	}
+
+	.c-collapse-title-down {
+		margin-left: 10px;
+		color: rgb(250, 250, 250);
+		cursor: pointer;
+		transition: all 0.3s;
+		transform: rotate(-90deg);
+	}
+
+	&.active {
+		.c-collapse-title-down {
+			transform: rotate(0);
+		}
+	}
+}
+</style>

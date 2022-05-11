@@ -82,6 +82,8 @@ export default {
 	top: calc(100% + 1px);
 	left: 0;
 	width: 100%;
+	max-height: 28 * 5px;
+	overflow-y: auto;
 }
 .c-select-icon {
 	position: absolute;

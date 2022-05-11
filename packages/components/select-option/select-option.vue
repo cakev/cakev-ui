@@ -1,5 +1,5 @@
 <template lang="pug">
-.c-option(@click="handleClick") {{  label  }}
+.c-option(@click="handleClick" :class="{'c-option-select':active}") {{  label  }}
 </template>
 <script lang="ts">
 import { findComponentUpward } from '@cakev/util'
@@ -14,8 +14,14 @@ export default {
 			type: [String, Number],
 		},
 	},
+	data() {
+		return {
+			active: false,
+		}
+	},
 	methods: {
 		handleClick(): void {
+			this.active = true
 			const parent = findComponentUpward(this, 'c-select')
 			parent.handleChange(this.value, this.label)
 			parent.init(this.value)
@@ -45,6 +51,7 @@ export default {
 	transition: background 0.2s ease-in-out;
 	&.c-option-select {
 		color: #2d8cf0;
+		background-color: #22242b;
 	}
 	&:hover {
 		color: #2d8cf0;
