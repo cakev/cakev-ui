@@ -7,12 +7,11 @@ c-row.c-select(:class="{'c-select-disabled':disabled,'c-select-focus':focus}" v-
 </template>
 <script lang="ts">
 import { findComponentsDownward } from '@cakev/util'
-// @ts-ignore
-import ClickOutside from 'vue-click-outside'
+import clickOutside from '../../directives/click-outside'
 
 export default {
 	name: 'c-select',
-	directives: { ClickOutside },
+	directives: { clickOutside },
 	props: {
 		value: {},
 		disabled: {

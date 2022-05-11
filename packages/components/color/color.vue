@@ -1,7 +1,7 @@
 <template lang="pug">
 c-row.c-color(ref="colorPicker" v-click-outside="hidePanel" :class="{'c-color-focus':focus}")
-	c-row.c-color-btn-box(@click="taggerPanel" :class="{'c-color-panel-disabled':disabled}")
-		.c-color-btn(:style="{'background-color':currentValue}")
+	c-row.c-color-btn-box(:class="{'c-color-panel-disabled':disabled}")
+		.c-color-btn(:style="{'background-color':currentValue}" @click="taggerPanel")
 		.c-color-panel
 			sketch(:value="currentValue" @input="updateValue")
 		c-svg(type="arrow-down" :color="disabled?'#515a6e':'#fff'" :size="12")
@@ -10,12 +10,12 @@ c-row.c-color(ref="colorPicker" v-click-outside="hidePanel" :class="{'c-color-fo
 <script lang="ts">
 // @ts-ignore
 import { Sketch } from 'vue-color'
-// @ts-ignore
-import ClickOutside from 'vue-click-outside'
+import clickOutside from '../../directives/click-outside'
+import transferDom from '../../directives/transfer-dom'
 
 export default {
 	name: 'c-color',
-	directives: { ClickOutside },
+	directives: { clickOutside, transferDom },
 	components: {
 		Sketch,
 	},

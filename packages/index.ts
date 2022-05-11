@@ -17,7 +17,12 @@ import CBadge from './components/badge'
 import CColor from './components/color'
 import CButton from './components/button'
 import CLoading from './components/loading'
+
+import clickOutside from './directives/click-outside'
+import transferDom from './directives/transfer-dom'
 import './style/index.scss'
+
+const directives = [clickOutside, transferDom]
 
 const components = [
 	CInput,
@@ -53,6 +58,7 @@ const ui = {
 	version,
 	install,
 	...components,
+	...directives,
 }
 
 if (typeof window !== 'undefined' && window.Vue) {
@@ -80,5 +86,7 @@ export {
 	CColor,
 	CButton,
 	CLoading,
+	clickOutside,
+	transferDom,
 }
 export default ui

@@ -1,5 +1,5 @@
 <template lang="pug">
-.c-drawer
+.c-drawer(v-transfer-dom :data-transfer="true")
 	.c-drawer-mask(v-show="currentVal")
 	.c-drawer-wrap(v-show="currentVal" @click="close")
 	transition(name="c-drawer-right")
@@ -11,8 +11,13 @@
 				slot
 </template>
 <script lang="ts">
+import transferDom from '../../directives/transfer-dom'
+
 export default {
 	name: 'c-drawer',
+	directives: {
+		transferDom,
+	},
 	props: {
 		width: {
 			default: '33%',

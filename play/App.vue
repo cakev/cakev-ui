@@ -18,6 +18,11 @@
 	c-svg(type="edit" color="#fff")
 	h2 c-switch
 	c-switch(v-model="switch1")
+	c-switch(v-model="switch2")
+	c-drawer(v-model="switch2" width='30%' title="标题")
+		h2 c-drawer
+		p 222
+		p 111
 	c-drawer(v-model="switch1" width='30%' title="标题")
 		h2 c-drawer
 		p 111
@@ -64,6 +69,7 @@ export default {
 		return {
 			color: '#ffffff',
 			switch1: false,
+			switch2: false,
 			input1: '111',
 			input3: '',
 			input2: true,
