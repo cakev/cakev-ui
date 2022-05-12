@@ -1,8 +1,8 @@
 <template lang="pug">
-.c-drawer(v-transfer-dom :data-transfer="true")
+.c-drawer(v-transfer-dom :data-transfer="transfer")
 	.c-drawer-mask(v-show="currentVal")
 	.c-drawer-wrap(v-show="currentVal" @click="close")
-	transition(name="c-drawer-right")
+	transition(name="transition-slideRight" :style="{width}")
 		.c-drawer-right(v-show="currentVal")
 			.c-drawer-header 
 				span {{title}}
@@ -19,8 +19,12 @@ export default {
 		transferDom,
 	},
 	props: {
+		transfer: {
+			type: Boolean,
+			default: true,
+		},
 		width: {
-			default: '33%',
+			default: '335px',
 		},
 		value: {
 			type: Boolean,
@@ -88,11 +92,10 @@ export default {
 }
 .c-drawer-right {
 	position: fixed;
-	top: 60px;
+	top: 0;
 	right: 0;
-	z-index: 9;
-	width: 33%;
-	height: calc(100vh - 60px);
+	width: 30%;
+	height: 100vh;
 	background: #22242b;
 	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
@@ -112,13 +115,5 @@ export default {
 	left: 0;
 	width: 100%;
 	height: 100%;
-}
-.c-drawer-right-enter-active,
-.c-drawer-right-leave-active {
-	transition: width 0.2s;
-}
-.c-drawer-right-enter,
-.c-drawer-right-leave-to {
-	width: 0;
 }
 </style>

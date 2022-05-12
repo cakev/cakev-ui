@@ -2,7 +2,7 @@
 .c-tooltip(@mouseenter="handleShowPopper" @mouseleave="handleClosePopper" v-on="$listeners" :class="{'c-tooltip-hover':visible}")
 	.c-tooltip-body
 		slot
-	transition(name="c-tooltip-fade")
+	transition(name="transition-fade")
 		.c-tooltip-content(v-show="visible" :class="`c-tooltip-content-${placement}`")
 			.c-tooltip-arrow(:class="`c-tooltip-arrow-${placement}`")
 			.c-tooltip-inner {{content}}
@@ -123,13 +123,5 @@ export default {
 	background-color: rgba(70, 76, 91, 0.9);
 	border-radius: 4px;
 	box-shadow: 0 1px 6px rgba(0, 0, 0, 0.2);
-}
-.c-tooltip-fade-enter-active,
-.c-tooltip-fade-leave-active {
-	transition: opacity 0.2s;
-}
-.c-tooltip-fade-enter,
-.c-tooltip-fade-leave-to {
-	opacity: 0;
 }
 </style>

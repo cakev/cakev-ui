@@ -34,3 +34,32 @@ li {
 	padding: 0;
 	list-style: none;
 }
+
+.transition-fade-enter-active,
+.transition-fade-leave-active {
+	transition: opacity 0.3s;
+}
+.transition-fade-enter,
+.transition-fade-leave-to {
+	opacity: 0;
+}
+
+.transition-scale-enter-active,
+.transition-scale-leave-active {
+	transition: opacity 0.3s, transform 0.3s;
+}
+.transition-scale-enter,
+.transition-scale-leave-to {
+	opacity: 0;
+	transform: scale(0);
+}
+
+.transition-slideRight-enter-active,
+.transition-slideRight-leave-active {
+	transition: transform 0.3s, opacity 0.3s;
+}
+.transition-slideRight-enter,
+.transition-slideRight-leave-to {
+	opacity: 0;
+	transform: translateX(100%);
+}

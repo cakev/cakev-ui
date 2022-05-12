@@ -18,6 +18,7 @@ import CColor from './components/color'
 import CButton from './components/button'
 import CLoading from './components/loading'
 import CModal from './components/modal'
+import CNotice from './components/notice'
 
 import clickOutside from './directives/click-outside'
 import transferDom from './directives/transfer-dom'
@@ -45,6 +46,7 @@ const components = [
 	CButton,
 	CLoading,
 	CModal,
+	CNotice,
 ]
 
 const install = (Vue: VueConstructor): void => {
@@ -89,6 +91,7 @@ export {
 	CButton,
 	CLoading,
 	CModal,
+	CNotice,
 	clickOutside,
 	transferDom,
 }

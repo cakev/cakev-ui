@@ -1,5 +1,5 @@
 <template lang="pug">
-transition(name="fade")
+transition(name="transition-fade")
 	c-column.c-loading(v-if="show",)
 		c-svg.c-loading-icon(type="loading", :size="48")
 		span {{ text }}

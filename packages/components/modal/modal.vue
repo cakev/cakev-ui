@@ -1,9 +1,9 @@
 <template lang="pug">
-.c-modal(v-transfer-dom :data-transfer="true")
+.c-modal(v-transfer-dom :data-transfer="transfer")
 	.c-modal-mask(v-show="currentVal")
-	.c-modal-wrap(v-show="currentVal" @click="close")
-		transition(name="c-modal-center")
-			.c-modal-center(v-show="currentVal" :style="{width:`${width}px`}" @click.stop)
+	transition(name="transition-scale")
+		.c-modal-wrap(v-show="currentVal" @click="close")
+			.c-modal-center(:style="{width:`${width}px`}" @click.stop)
 				.c-modal-body
 					c-row(align="start")
 						c-svg(:type="icon" v-if="icon" color="#fff")
@@ -25,6 +25,14 @@ export default {
 	props: {
 		onOk: {},
 		onCancel: {},
+		type: {
+			type: String,
+			default: 'info',
+		},
+		transfer: {
+			type: Boolean,
+			default: true,
+		},
 		title: {
 			type: String,
 			default: '提示',
@@ -53,6 +61,10 @@ export default {
 			type: Number,
 			default: 416,
 		},
+		removeEle: {
+			type: Boolean,
+			default: false,
+		},
 	},
 	data(props) {
 		return {
@@ -76,6 +88,12 @@ export default {
 		close(): void {
 			this.currentVal = false
 			this.$emit('input', false)
+			setTimeout(() => {
+				if (this.removeEle) {
+					this.$destroy()
+					if (this.$el) document.body.removeChild(this.$el)
+				}
+			}, 300)
 		},
 	},
 }
@@ -117,27 +135,15 @@ export default {
 	right: 0;
 	bottom: 0;
 	left: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	overflow: auto;
 }
 .c-modal-center {
-	position: fixed;
-	top: 50%;
-	left: 50%;
 	padding: 22px 32px 24px 32px;
 	background: #2d2f38;
 	border-radius: 4px;
 	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-	transition: all 0.2s;
-	transform: translateY(-50%) translateX(-50%);
-}
-.c-modal-center-enter-active,
-.c-modal-center-leave-active {
-	opacity: 1;
-	transform: scale(1) translateY(-50%) translateX(-50%);
-}
-.c-modal-center-enter,
-.c-modal-center-leave-to {
-	opacity: 0;
-	transform: scale(0) translateY(-50%) translateX(-50%);
 }
 </style>

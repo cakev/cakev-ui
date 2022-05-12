@@ -72,10 +72,11 @@
 	c-button(@click="select=2") click select
 	c-button(@click="modal1=!modal1") click modal
 	c-button(@click="handleModal") click modal
+	c-button(@click="handleNotice") click notice
 	c-modal(v-model="modal1")
 </template>
 <script lang="ts">
-import { CModal } from '@/index'
+import { CModal, CNotice } from '@/index'
 export default {
 	name: 'play',
 	data() {
@@ -96,6 +97,13 @@ export default {
 		}
 	},
 	methods: {
+		handleNotice() {
+			CNotice.info({
+				title: '111',
+				content: '222',
+				duration: 0,
+			})
+		},
 		handleModal() {
 			CModal.confirm({
 				title: '111',
