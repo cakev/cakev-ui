@@ -1,6 +1,9 @@
 <template lang="pug">
 c-row.c-select(:class="{'c-select-disabled':disabled,'c-select-focus':focus}" v-click-outside="hidePanel")
-	.c-select-content(@click="taggerPanel" @click.stop) {{label}}
+	.c-select-content(@click="taggerPanel" @click.stop)
+		.c-input-placeholder(v-if="!currentVal") {{placeholder}}
+		span {{label}}
+	c-svg.c-select-clearable(v-if="clearable && currentVal" type="add" :size="14" @click="handleClear" @click.stop)
 	c-svg.c-select-icon(type="arrow-down" :size="14" @click="taggerPanel" @click.stop)
 	.c-select-option-list(v-show="showList")
 		slot
@@ -18,6 +21,14 @@ export default {
 			type: Boolean,
 			default: false,
 		},
+		placeholder: {
+			type: String,
+			default: '',
+		},
+		clearable: {
+			type: Boolean,
+			default: false,
+		},
 	},
 	data(props) {
 		return {
@@ -29,11 +40,24 @@ export default {
 		}
 	},
 	watch: {
-		value(val) {
-			this.currentVal = val
+		value: {
+			handler(val) {
+				this.currentVal = val
+				this.$nextTick(() => {
+					this.init(val)
+				})
+			},
+			immediate: true,
 		},
 	},
 	methods: {
+		handleClear(): void {
+			if (this.disabled) return
+			this.label = ''
+			this.currentVal = ''
+			this.$emit('change', '')
+			this.$emit('input', '')
+		},
 		hidePanel(): void {
 			this.focus = false
 			this.showList = false
@@ -56,12 +80,9 @@ export default {
 			if (this.disabled) return
 			this.label = label
 			this.currentVal = value
-			this.$emit('on-change', value)
+			this.$emit('change', value)
 			this.$emit('input', value)
 		},
-	},
-	mounted() {
-		this.init(this.value)
 	},
 }
 </script>
@@ -76,6 +97,7 @@ export default {
 	text-align: left;
 	text-overflow: ellipsis;
 	white-space: nowrap;
+	cursor: pointer;
 }
 .c-select-option-list {
 	position: absolute;
@@ -85,10 +107,19 @@ export default {
 	max-height: 28 * 5px;
 	overflow-y: auto;
 }
+.c-select-clearable {
+	position: absolute;
+	right: 30px;
+	display: none;
+	color: #fff;
+	cursor: pointer;
+	transform: rotate(45deg);
+}
 .c-select-icon {
 	position: absolute;
 	right: 10px;
 	color: #fff;
+	cursor: pointer;
 }
 .c-select {
 	position: relative;
@@ -105,9 +136,21 @@ export default {
 	}
 	&:hover {
 		border-color: #2491f7;
+		.c-select-clearable {
+			display: block;
+		}
 	}
 	&.c-select-disabled {
-		cursor: no-drop;
+		.c-select-content {
+			cursor: no-drop;
+		}
+		.c-select-icon {
+			cursor: no-drop;
+		}
+		.c-select-clearable {
+			display: none;
+		}
+
 		border-color: #393b4a;
 	}
 }

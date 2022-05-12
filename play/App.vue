@@ -62,13 +62,14 @@
 	c-select(v-model="select")
 		c-select-option(label="1111" :value="1")
 		c-select-option(label="2222" :value="2")
-	c-select(v-model="select")
+	c-select(v-model="select" placeholder="dddd" clearable disabled)
 		c-select-option(label="1111" :value="1")
 		c-select-option(label="2222" :value="2")
 		c-select-option(label="2222" :value="2")
 		c-select-option(label="2222" :value="2")
 		c-select-option(label="2222" :value="2")
 		c-select-option(label="2222" :value="2")
+	c-button(@click="select=2") click
 </template>
 <script lang="ts">
 export default {

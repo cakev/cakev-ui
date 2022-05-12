@@ -33,14 +33,14 @@ export default {
 <style lang="scss">
 .c-option {
 	position: relative;
+	display: flex;
+	align-items: center;
 	width: 100%;
 	height: 28px;
 	padding: 7px 16px;
 	margin: 0;
 	overflow: hidden;
-	clear: both;
 	font-size: 14px;
-	line-height: normal;
 	color: rgb(191, 191, 191);
 	text-align: left;
 	text-overflow: ellipsis;
@@ -50,12 +50,12 @@ export default {
 	background-color: #2d2f38;
 	transition: background 0.2s ease-in-out;
 	&.c-option-select {
-		color: #2d8cf0;
-		background-color: #22242b;
+		color: #fff;
+		background-color: #2d8cf0;
 	}
 	&:hover {
-		color: #2d8cf0;
-		background-color: #22242b;
+		color: #fff;
+		background-color: #57a3f3;
 	}
 }
 </style>
