@@ -1,5 +1,5 @@
 <template lang="pug">
-.c-button(:class="[`c-button-${type}`]" v-bind="{ ...$props, ...$attrs }", v-on="$listeners", @click="handleClick")
+.c-button(:class="[`c-button-${type}`]" v-bind="{ ...$props, ...$attrs }", @click="handleClick")
 	c-row(:style="{justifyContent: 'center',height: '100%'}")
 		c-svg(type="loading" :style="{margin:'0 4px 0 0'}" :size="14" v-if="loading")
 		span

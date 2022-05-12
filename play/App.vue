@@ -18,7 +18,7 @@
 	c-svg(type="edit" color="#fff")
 	h2 c-switch
 	c-switch(v-model="switch1")
-	c-switch(v-model="switch2")
+	c-button(@click="switch2=!switch2") click drawer
 	c-drawer(v-model="switch2" width='30%' title="标题")
 		h2 c-drawer
 		p 222
@@ -69,13 +69,18 @@
 		c-select-option(label="2222" :value="2")
 		c-select-option(label="2222" :value="2")
 		c-select-option(label="2222" :value="2")
-	c-button(@click="select=2") click
+	c-button(@click="select=2") click select
+	c-button(@click="modal1=!modal1") click modal
+	c-button(@click="handleModal") click modal
+	c-modal(v-model="modal1")
 </template>
 <script lang="ts">
+import { CModal } from '@/index'
 export default {
 	name: 'play',
 	data() {
 		return {
+			modal1: false,
 			collapse1: true,
 			color1: '#ffffff',
 			color2: '#181b24',
@@ -91,6 +96,15 @@ export default {
 		}
 	},
 	methods: {
+		handleModal() {
+			CModal.confirm({
+				title: '111',
+				content: '222',
+				onOk: () => {
+					console.log(1)
+				},
+			})
+		},
 		updateCode(val) {
 			console.log(val)
 		},
