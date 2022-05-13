@@ -63,16 +63,21 @@ export default {
 </script>
 <style lang="scss">
 .c-code {
-	background-color: rgb(24, 27, 36) !important;
-	border: 1px solid #393b4a;
+	background-color: var(--panelBgColor) !important;
+	border: 1px solid var(--contentBorderColor);
 	border-radius: 4px;
 	&:hover {
-		border-color: #2491f7;
+		border-color: var(--themeColor);
+		box-shadow: var(--themeBoxshowColor);
 	}
 	&.ace_focus {
-		border-color: #2491f7;
+		border-color: var(--themeColor);
+		box-shadow: var(--themeBoxshowColor);
 	}
-
+	.ace-idle-fingers,
+	.ace_identifier {
+		color: var(--panelFontColor) !important;
+	}
 	.ace_scrollbar-v {
 		&::-webkit-scrollbar {
 			width: 4px;
@@ -98,12 +103,12 @@ export default {
 	}
 
 	.ace_gutter {
-		background-color: rgb(24, 27, 36) !important;
+		background-color: var(--middleBgColor) !important;
 		border-right: 1px solid #393b4a;
 	}
 
 	.ace_gutter-active-line {
-		background-color: rgb(24, 27, 36) !important;
+		background-color: var(--middleBgColor) !important;
 	}
 
 	.ace_cursor {
@@ -112,7 +117,7 @@ export default {
 
 	.ace_marker-layer {
 		.ace_active-line {
-			background-color: rgb(24, 27, 36) !important;
+			background-color: var(--middleBgColor) !important;
 		}
 	}
 
@@ -121,7 +126,7 @@ export default {
 	}
 
 	.ace_variable {
-		color: #a2adce;
+		color: var(--panelFontColor);
 	}
 
 	.ace_numeric {

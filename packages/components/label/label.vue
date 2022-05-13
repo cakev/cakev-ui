@@ -13,8 +13,8 @@ export default {
 	min-width: 60px;
 	min-height: 32px;
 	margin-right: 10px;
-	font-size: 12px;
+	font-size: var(--panelFontSize);
 	line-height: 32px;
-	color: rgb(191, 191, 191);
+	color: var(--panelFontColor);
 }
 </style>

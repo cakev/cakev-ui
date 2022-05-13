@@ -144,10 +144,10 @@ export default {
 	width: 8px;
 	height: 8px;
 	text-align: center;
-	background-color: #2491f7;
+	background-color: var(--themeColor);
 	border: 2px solid #fff;
 	border-radius: 8px;
-	transition: all 0.2s linear;
+	transition: all 0.2s;
 }
 .c-slider-wrap {
 	position: relative;
@@ -185,7 +185,7 @@ export default {
 	}
 	&.c-slider-wrap-default {
 		.c-slider-wrap-bar {
-			background: #2491f7;
+			background: var(--themeColor);
 		}
 	}
 }

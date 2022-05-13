@@ -87,27 +87,26 @@ export default {
 	width: 100%;
 	height: 100%;
 	padding: 4px 8px;
-	color: #393b4a;
+	color: var(--panelDisabeldFontColor);
 	text-align: left;
 	pointer-events: none;
 }
 .c-input {
 	height: 28px;
-	font-size: 14px;
-	background-color: #181b24;
-	border: 1px solid #393b4a;
-	border-radius: 4px;
+	font-size: var(--panelFontSize);
+	color: var(--panelFontColor);
+	background-color: var(--panelBgColor);
+	border: 1px solid var(--contentBorderColor);
+	border-radius: var(--panelBorderRadius);
 	&.c-input-focus {
-		border-color: #2491f7;
-	}
-	&:hover {
-		border-color: #2491f7;
+		border-color: var(--themeColor);
+		box-shadow: var(--themeBoxshowColor);
 	}
 	&.c-input-disabled {
+		color: var(--panelDisabeldFontColor);
 		cursor: no-drop;
-		border-color: #393b4a;
 		input {
-			color: #515a6e;
+			color: var(--panelDisabeldFontColor);
 			cursor: no-drop;
 		}
 	}
@@ -116,7 +115,7 @@ export default {
 		height: 28px;
 		padding: 4px 8px;
 		font-size: inherit;
-		color: rgb(191, 191, 191);
+		color: var(--panelFontColor);
 		background-color: transparent;
 		border: none;
 		outline: none;
@@ -126,7 +125,7 @@ export default {
 		padding: 4px 7px;
 		font-size: inherit;
 		line-height: 1;
-		color: #515a6e;
+		color: var(--panelDisabeldFontColor);
 	}
 }
 </style>

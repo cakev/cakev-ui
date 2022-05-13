@@ -1,7 +1,7 @@
 <template lang="pug">
 c-row.c-badge(v-bind="{ ...$props, ...$attrs }", v-on="$listeners", :class="{ active }")
 	c-tooltip(:content="title", placement="left")
-		c-svg(:type="type", :size="22" color="#fff")
+		c-svg(:type="type", :size="22")
 </template>
 <script lang="ts">
 export default {
@@ -21,10 +21,9 @@ export default {
 	justify-content: center;
 	width: 46px;
 	height: 46px;
-	color: #bfbfbf;
+	color: var(--panelFontColor);
 	cursor: pointer;
-	border-bottom: 1px solid #393b4a;
-
+	border-bottom: 1px solid var(--contentBorderColor);
 	&.active {
 		&::before {
 			position: absolute;
@@ -33,7 +32,7 @@ export default {
 			width: 4px;
 			height: 4px;
 			content: '';
-			background-color: #2491f7;
+			background-color: var(--themeColor);
 			border-radius: 50%;
 		}
 	}

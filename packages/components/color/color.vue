@@ -4,7 +4,7 @@ c-row.c-color(ref="colorPicker" v-click-outside="hidePanel" :class="{'c-color-fo
 		.c-color-btn(:style="{'background-color':currentValue}" @click="taggerPanel")
 		.c-color-panel
 			sketch(:value="currentValue" @input="updateValue")
-		c-svg(type="arrow-down" :color="disabled?'#515a6e':'#fff'" :size="12")
+		c-svg(type="arrow-down" :size="12")
 	c-input(:value="currentValue" :disabled="true")
 </template>
 <script lang="ts">
@@ -56,13 +56,13 @@ export default {
 	height: 28px;
 	padding: 8px;
 	margin-right: 10px;
-	background-color: #181b24;
-	border: 1px solid #393b4a;
-	border-radius: 4px;
+	color: var(--panelFontColor);
+	background-color: var(--panelBgColor);
+	border: 1px solid var(--contentBorderColor);
+	border-radius: var(--panelBorderRadius);
 	&.c-color-panel-disabled {
-		.c-color-btn {
-			cursor: no-drop;
-		}
+		color: var(--panelDisabeldFontColor);
+		cursor: no-drop;
 	}
 }
 .c-color-btn {
@@ -70,7 +70,7 @@ export default {
 	height: 12px;
 	margin-right: 10px;
 	cursor: pointer;
-	border: 1px solid #393b4a;
+	border: 1px solid var(--contentBorderColor);
 }
 .c-color-panel {
 	position: absolute;
@@ -78,7 +78,7 @@ export default {
 	width: 212px;
 	visibility: hidden;
 	opacity: 0;
-	transition: all 0.3s ease;
+	transition: all 0.3s;
 }
 .c-color {
 	position: relative;

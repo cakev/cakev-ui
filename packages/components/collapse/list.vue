@@ -1,6 +1,6 @@
 <template lang="pug">
 .c-collapse.c-collapse-list
-	c-collapse-default(:title="title", :icon="icon", @icon-click="handleClick")
+	c-collapse-default(:label="label", :icon="icon", @icon-click="handleClick")
 		.c-collapse-list-tab(v-if="list.length > 0")
 			span(@click="handleClickTab(i)", v-for="(v, i) in list", :class="{ active: index === i }") {{ prefix }}{{ i + 1 }}
 		.c-collapse-list-empty(v-else)
@@ -15,7 +15,7 @@ export default {
 	name: 'c-collapse-list',
 	components: { CCollapseDefault },
 	props: {
-		title: {
+		label: {
 			type: String,
 		},
 		prefix: {
@@ -91,8 +91,8 @@ export default {
 		}
 
 		&.active {
-			color: #2491f7;
-			border-bottom: 1px solid #2491f7;
+			color: var(--themeColor);
+			border-bottom: 1px solid var(--themeColor);
 		}
 	}
 }

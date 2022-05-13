@@ -40,22 +40,24 @@ export default {
 	padding: 7px 16px;
 	margin: 0;
 	overflow: hidden;
-	font-size: 14px;
-	color: rgb(191, 191, 191);
+	font-size: var(--panelFontSize);
 	text-align: left;
 	text-overflow: ellipsis;
 	white-space: nowrap;
 	list-style: none;
 	cursor: pointer;
-	background-color: #2d2f38;
-	transition: background 0.2s ease-in-out;
+	user-select: none;
+	background-color: var(--panelBgColor);
+	transition: all 0.3s;
 	&.c-option-select {
 		color: #fff;
-		background-color: #2d8cf0;
+		background-color: var(--themeColor);
 	}
 	&:hover {
-		color: #fff;
-		background-color: #57a3f3;
+		color: var(--themeColor);
+		&.c-option-select {
+			color: #fff;
+		}
 	}
 }
 </style>

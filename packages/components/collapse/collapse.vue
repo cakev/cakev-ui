@@ -1,9 +1,9 @@
 <template lang="pug">
-CCollapseDefault(v-if="type==='default'" v-bind="{...$props,...$attrs}",v-on="$listeners")
+CCollapseDefault(v-if="type==='default'" v-bind="{...$props,...$attrs}", v-on="$listeners")
 	slot
-CCollapseEye(v-else-if="type==='eye'" v-bind="{...$props,...$attrs}",v-on="$listeners")
+CCollapseEye(v-else-if="type==='eye'" v-bind="{...$props,...$attrs}", v-on="$listeners")
 	slot
-CCollapseList(v-else v-bind="{...$props,...$attrs}",v-on="$listeners")
+CCollapseList(v-else v-bind="{...$props,...$attrs}", v-on="$listeners")
 	slot
 </template>
 <script lang="ts">
@@ -33,9 +33,14 @@ export default {
 			border-top: none;
 		}
 	}
+	&:last-child {
+		.c-collapse-title {
+			border-bottom: none;
+		}
+	}
 }
 .c-collapse-title-icon {
-	color: rgb(250, 250, 250);
+	color: var(--panelFontColor);
 	cursor: pointer;
 }
 .c-collapse-content {
@@ -58,22 +63,20 @@ export default {
 	height: 36px;
 	line-height: 36px;
 	cursor: pointer;
-	background-color: #2d2f38;
-	border-top: 1px solid rgb(57, 59, 74);
-	border-bottom: 1px solid rgb(57, 59, 74);
+	background-color: var(--middleBgColor);
 
 	label {
 		margin-left: 10px;
 		font-size: 12px;
 		line-height: 36px;
-		color: rgb(250, 250, 250);
+		color: var(--panelFontColor);
 		cursor: pointer;
 		user-select: none;
 	}
 
 	.c-collapse-title-down {
 		margin-left: 10px;
-		color: rgb(250, 250, 250);
+		color: var(--panelFontColor);
 		cursor: pointer;
 		transition: all 0.3s;
 		transform: rotate(-90deg);

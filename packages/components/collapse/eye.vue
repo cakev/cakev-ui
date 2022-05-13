@@ -4,7 +4,7 @@
 		:class="{ active:currentVal, enable: !currentEnable }",
 		@click="handleClick")
 		c-svg.c-collapse-title-down(:size="12" type="arrow-down")
-		label {{ title }}
+		label {{ label }}
 		.c-collapse-title-right
 			c-tooltip(:content="icon.msg" placement="top")
 				c-svg.c-collapse-title-icon(
@@ -20,7 +20,7 @@
 export default {
 	name: 'c-collapse-eye',
 	props: {
-		title: {
+		label: {
 			type: String,
 		},
 		enable: {

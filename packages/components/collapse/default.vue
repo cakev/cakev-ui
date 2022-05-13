@@ -4,7 +4,7 @@
 		:class="{ active:currentVal }",
 		@click="taggerPanel")
 		c-svg.c-collapse-title-down(:size="12" type="arrow-down")
-		label {{ title }}
+		label {{ label }}
 		.c-collapse-title-right
 			c-tooltip(v-for="item in icon", :content="item.msg" placement="top")
 				c-svg.c-collapse-title-icon(
@@ -21,7 +21,7 @@
 export default {
 	name: 'c-collapse-default',
 	props: {
-		title: {
+		label: {
 			type: String,
 		},
 		icon: {

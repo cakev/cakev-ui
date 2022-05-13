@@ -19,10 +19,15 @@ import CButton from './components/button'
 import CLoading from './components/loading'
 import CModal from './components/modal'
 import CNotice from './components/notice'
+import CTabs from './components/tabs'
+import CTabPane from './components/tab-pane'
+import CUploadImg from './components/upload-img'
 
 import clickOutside from './directives/click-outside'
 import transferDom from './directives/transfer-dom'
-import './style/index.scss'
+import './style/config.scss'
+import './style/reset.scss'
+import './style/transition.scss'
 
 const directives = [clickOutside, transferDom]
 
@@ -47,6 +52,9 @@ const components = [
 	CLoading,
 	CModal,
 	CNotice,
+	CTabs,
+	CTabPane,
+	CUploadImg,
 ]
 
 const install = (Vue: VueConstructor): void => {
@@ -92,6 +100,9 @@ export {
 	CLoading,
 	CModal,
 	CNotice,
+	CTabs,
+	CTabPane,
+	CUploadImg,
 	clickOutside,
 	transferDom,
 }

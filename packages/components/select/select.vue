@@ -1,5 +1,5 @@
 <template lang="pug">
-c-row.c-select(:class="{'c-select-disabled':disabled,'c-select-focus':focus}" v-click-outside="hidePanel")
+c-row.c-select(:class="{'c-select-disabled':disabled,'c-select-focus':focus,'c-select-no-border':!border}" v-click-outside="hidePanel")
 	.c-select-content(@click="taggerPanel" @click.stop)
 		.c-input-placeholder(v-if="!currentVal") {{placeholder}}
 		span {{label}}
@@ -29,6 +29,10 @@ export default {
 			type: Boolean,
 			default: false,
 		},
+		border: {
+			type: Boolean,
+			default: true,
+		},
 	},
 	data(props) {
 		return {
@@ -36,7 +40,7 @@ export default {
 			showList: false,
 			focus: false,
 			label: props.value,
-			childrens: [],
+			children: [],
 		}
 	},
 	watch: {
@@ -68,9 +72,9 @@ export default {
 			this.showList = !this.showList
 		},
 		init(v) {
-			this.childrens = findComponentsDownward(this, 'c-select-option')
-			if (this.childrens) {
-				this.childrens.forEach(child => {
+			this.children = findComponentsDownward(this, 'c-select-option')
+			if (this.children) {
+				this.children.forEach(child => {
 					child.active = v ? v === child.value : this.currentVal === child.value
 					child.value === this.currentVal ? (this.label = child.label) : void 0
 				})
@@ -93,11 +97,11 @@ export default {
 	height: 28px;
 	padding: 4px 40px 4px 8px;
 	overflow: hidden;
-	color: rgb(191, 191, 191);
 	text-align: left;
 	text-overflow: ellipsis;
 	white-space: nowrap;
 	cursor: pointer;
+	user-select: none;
 }
 .c-select-option-list {
 	position: absolute;
@@ -106,6 +110,7 @@ export default {
 	width: 100%;
 	max-height: 28 * 5px;
 	overflow-y: auto;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
 }
 .c-select-clearable {
 	position: absolute;
@@ -118,27 +123,22 @@ export default {
 .c-select-icon {
 	position: absolute;
 	right: 10px;
-	color: #fff;
 	cursor: pointer;
 }
 .c-select {
 	position: relative;
 	width: 100%;
 	height: 28px;
-	font-size: 14px;
-	background-color: #181b24;
-	border: 1px solid #393b4a;
-	border-radius: 4px;
-
+	font-size: var(--panelFontSize);
+	color: var(--panelFontColor);
+	background-color: var(--panelBgColor);
+	border: 1px solid var(--contentBorderColor);
+	border-radius: var(--panelBorderRadius);
+	transition: all 0.3s;
 	&.c-select-focus {
 		z-index: 9999;
-		border-color: #2491f7;
-	}
-	&:hover {
-		border-color: #2491f7;
-		.c-select-clearable {
-			display: block;
-		}
+		border-color: var(--themeColor);
+		box-shadow: var(--themeBoxshowColor);
 	}
 	&.c-select-disabled {
 		.c-select-content {
@@ -151,7 +151,10 @@ export default {
 			display: none;
 		}
 
-		border-color: #393b4a;
+		color: var(--panelDisabeldFontColor);
+	}
+	&.c-select-no-border {
+		border: none;
 	}
 }
 </style>

@@ -1,40 +1,3 @@
-* {
-	box-sizing: border-box;
-}
-::after,
-::before {
-	box-sizing: border-box;
-}
-
-body {
-	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, PingFang SC, Hiragino Sans GB, Microsoft YaHei,
-		Helvetica Neue, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
-	-webkit-font-feature-settings: 'tnum';
-	font-feature-settings: 'tnum';
-	font-variant: tabular-nums;
-}
-
-p,
-h1,
-h2,
-h3,
-ul,
-li,
-body,
-html {
-	margin: 0;
-}
-
-input {
-	outline: none;
-}
-
-ul,
-li {
-	padding: 0;
-	list-style: none;
-}
-
 .transition-fade-enter-active,
 .transition-fade-leave-active {
 	transition: opacity 0.3s;
@@ -53,7 +16,6 @@ li {
 	opacity: 0;
 	transform: scale(0);
 }
-
 .transition-slideRight-enter-active,
 .transition-slideRight-leave-active {
 	transition: transform 0.3s, opacity 0.3s;

@@ -36,25 +36,29 @@ export default {
 	line-height: 14px;
 	cursor: pointer;
 	user-select: none;
-	background-color: #ccc;
-	border-radius: 22px;
-	transition: all 0.2s ease-in-out;
+	background-color: transparent;
+	border-color: var(--panelFontColor);
+	border-style: solid;
+	border-width: 1px;
+	border-radius: 28px;
+	transition: all 0.3s;
 	&::after {
 		position: absolute;
-		top: 2px;
+		top: 1px;
 		left: 2px;
 		width: 12px;
 		height: 12px;
 		cursor: pointer;
 		content: '';
-		background-color: #fff;
+		background-color: var(--panelFontColor);
 		border-radius: 18px;
-		transition: left 0.2s ease-in-out, width 0.2s ease-in-out;
+		transition: all 0.3s;
 	}
 	&.active {
-		background-color: #2491f7;
+		background-color: var(--panelFontColor);
 		&::after {
-			left: 14px;
+			left: 13px;
+			background-color: var(--panelBgColor);
 		}
 	}
 }

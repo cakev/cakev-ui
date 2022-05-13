@@ -47,9 +47,9 @@ export default {
 
 	.label {
 		width: 105px;
-		font-size: 12px;
+		font-size: var(--panelFontSize);
 		line-height: 32px;
-		color: #fafafa;
+		color: var(--panelFontColor);
 	}
 }
 </style>

@@ -1,0 +1,41 @@
+* {
+	box-sizing: border-box;
+}
+::after,
+::before {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, PingFang SC, Hiragino Sans GB, Microsoft YaHei,
+		Helvetica Neue, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+	-webkit-font-feature-settings: 'tnum';
+	font-feature-settings: 'tnum';
+	font-variant: tabular-nums;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+ul,
+li,
+body,
+html {
+	margin: 0;
+	font-size: var(--panelFontSize);
+	font-weight: normal;
+	color: var(--panelFontColor);
+}
+
+input {
+	outline: none;
+}
+
+ul,
+li {
+	padding: 0;
+	list-style: none;
+}
