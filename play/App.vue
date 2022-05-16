@@ -83,7 +83,7 @@
 	c-select(v-model="select" :border="false")
 		c-select-option(label="1111" :value="1")
 		c-select-option(label="2222" :value="2")
-	c-upload
+	c-upload-img
 </template>
 <script lang="ts">
 import { CModal, CNotice } from '@/index'

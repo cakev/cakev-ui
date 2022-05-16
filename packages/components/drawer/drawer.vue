@@ -83,7 +83,6 @@ export default {
 	font-size: 16px;
 	font-weight: 500;
 	line-height: 48px;
-	color: #fff;
 	text-overflow: ellipsis;
 	white-space: nowrap;
 	span {
@@ -96,8 +95,8 @@ export default {
 	right: 0;
 	width: 30%;
 	height: 100vh;
-	background: #22242b;
-	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+	background: var(--panelBgColor);
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.1);
 }
 .c-drawer-wrap {
 	position: fixed;

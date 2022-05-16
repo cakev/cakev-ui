@@ -66,10 +66,6 @@ export default {
 	background-color: var(--panelBgColor) !important;
 	border: 1px solid var(--contentBorderColor);
 	border-radius: 4px;
-	&:hover {
-		border-color: var(--themeColor);
-		box-shadow: var(--themeBoxshowColor);
-	}
 	&.ace_focus {
 		border-color: var(--themeColor);
 		box-shadow: var(--themeBoxshowColor);
