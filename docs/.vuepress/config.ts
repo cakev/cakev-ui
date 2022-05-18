@@ -1,22 +1,16 @@
 module.exports = {
-	configureWebpack: config => {
-		if (process.env.NODE_ENV === 'production') {
-			config.output.publicPath = 'https://raw.githubusercontent.com/cakev/cakev-ui/gh-pages/'
-		}
-	},
-	theme: '',
 	title: 'CakeV-UI',
 	description: 'CakeV-UI的组件库文档教程示例代码',
+	base: process.env.NODE_ENV === 'production' ? '/cakev-ui/' : '/',
 	themeConfig: {
 		nav: [
 			{
 				text: '首页',
-				link: '/',
+				link: '/index.html',
 			},
 			{
 				text: '组件',
-
-				link: '/comps/',
+				link: '/comps/index.html',
 			},
 		],
 		sidebar: {
