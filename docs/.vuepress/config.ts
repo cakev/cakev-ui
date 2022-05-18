@@ -1,6 +1,8 @@
 module.exports = {
 	configureWebpack: config => {
-		config.output.publicPath = './'
+		if (process.env.NODE_ENV === 'production') {
+			config.output.publicPath = 'https://raw.githubusercontent.com/cakev/cakev-ui/gh-pages/'
+		}
 	},
 	theme: '',
 	title: 'CakeV-UI',
