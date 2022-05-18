@@ -1,4 +1,7 @@
 module.exports = {
+	configureWebpack: config => {
+		config.output.publicPath = './'
+	},
 	theme: '',
 	title: 'CakeV-UI',
 	description: 'CakeV-UI的组件库文档教程示例代码',
