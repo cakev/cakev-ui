@@ -32,7 +32,7 @@ module.exports = {
 		},
 	},
 	head: [
-		['script', { src: 'https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js' }],
+		['script', { src: 'https://unpkg.com/vue@2.6.14/dist/vue.min.js' }],
 		['script', { src: 'https://unpkg.com/@cakev/ui/dist/ui.umd.min.js' }],
 		['link', { rel: 'stylesheet', href: 'https://unpkg.com/@cakev/ui/dist/ui.css' }],
 	],

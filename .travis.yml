@@ -8,3 +8,6 @@ install:
     - npm install
 before_script:
     - npm run build
+script:
+    - chmod 755 ./deploy.sh
+    - ./deploy.sh
