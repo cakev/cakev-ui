@@ -2,10 +2,10 @@ name: 'Publish'
 on:
     push:
         tags:
-            - *
+            - '*'
     pull_request:
         tags:
-            - *
+            - '*'
 jobs:
     build:
         runs-on: ubuntu-latest
