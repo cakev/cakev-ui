@@ -25,7 +25,7 @@ jobs:
             - name: Publish
               uses: s0/git-publish-subdir-action@master
               env:
-                  REPO: cakev-ui-doc
+                  REPO: https://github.com/cakev/cakev-ui-doc
                   BRANCH: gh-pages
                   FOLDER: docs/.vuepress/dist
                   SSH_PRIVATE_KEY: ${{ secrets.ACCESS_TOKEN }}
