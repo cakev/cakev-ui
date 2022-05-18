@@ -23,9 +23,9 @@ jobs:
                 npm run build --if-present
                 npm run doc:build
             - name: Publish
-              uses: s0/git-publish-subdir-action@master
+              uses: JamesIves/github-pages-deploy-action@releases/v3
               env:
                   REPO: git@github.com:cakev/cakev-ui-doc.git
                   BRANCH: gh-pages
                   FOLDER: docs/.vuepress/dist
-                  SSH_PRIVATE_KEY: ${{ secrets.ACCESS_TOKEN }}
+                  SSH_PRIVATE_KEY: ${{ secrets.DEPLOY_PRIVATE_KEY }}
