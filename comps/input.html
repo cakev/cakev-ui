@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Input 输入框 | CakeV-UI</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <script src="https://unpkg.com/vue@2.6.14/dist/vue.min.js"></script>
+    <script src="https://unpkg.com/@cakev/ui/dist/ui.umd.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/@cakev/ui/dist/ui.css">
+    <meta name="description" content="CakeV-UI的组件库文档教程示例代码">
+    
+    <link rel="preload" href="/assets/css/0.styles.d331a4a6.css" as="style"><link rel="preload" href="/assets/js/app.f78fdfce.js" as="script"><link rel="preload" href="/assets/js/2.bb013881.js" as="script"><link rel="preload" href="/assets/js/12.16d46f53.js" as="script"><link rel="prefetch" href="/assets/js/10.3401873c.js"><link rel="prefetch" href="/assets/js/11.e573097f.js"><link rel="prefetch" href="/assets/js/13.afee725e.js"><link rel="prefetch" href="/assets/js/14.9ac8f391.js"><link rel="prefetch" href="/assets/js/15.36bf17dc.js"><link rel="prefetch" href="/assets/js/16.bc3220cd.js"><link rel="prefetch" href="/assets/js/17.a9924e0c.js"><link rel="prefetch" href="/assets/js/18.ae5053e1.js"><link rel="prefetch" href="/assets/js/19.dee4d0c2.js"><link rel="prefetch" href="/assets/js/3.83e7b6d5.js"><link rel="prefetch" href="/assets/js/4.b06a86fa.js"><link rel="prefetch" href="/assets/js/5.98cc22a8.js"><link rel="prefetch" href="/assets/js/6.fb44c4b0.js"><link rel="prefetch" href="/assets/js/7.28bd5e56.js"><link rel="prefetch" href="/assets/js/8.a7633a61.js"><link rel="prefetch" href="/assets/js/9.41babb30.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.d331a4a6.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">CakeV-UI</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/comps/" class="nav-link router-link-active">
+  组件
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/comps/" class="nav-link router-link-active">
+  组件
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/comps/" aria-current="page" class="sidebar-link">安装</a></li><li><a href="/comps/svg.html" class="sidebar-link">Svg 图标</a></li><li><a href="/comps/badge.html" class="sidebar-link">Badge 徽章</a></li><li><a href="/comps/row.html" class="sidebar-link">Row 横向布局</a></li><li><a href="/comps/column.html" class="sidebar-link">Column 纵向布局</a></li><li><a href="/comps/input.html" aria-current="page" class="active sidebar-link">Input 输入框</a></li><li><a href="/comps/label.html" class="sidebar-link">Label 标签</a></li><li><a href="/comps/select.html" class="sidebar-link">Select 选择器</a></li><li><a href="/comps/slider.html" class="sidebar-link">Slider 滑块</a></li><li><a href="/comps/switch.html" class="sidebar-link">Switch 开关</a></li><li><a href="/comps/code.html" class="sidebar-link">Code 代码块</a></li><li><a href="/comps/tooltip.html" class="sidebar-link">ToolTip 文本提示</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="input-输入框"><a href="#input-输入框" class="header-anchor">#</a> Input 输入框</h1> <div data-config="" data-type="vue" data-code="%3Ctemplate%3E%0A%09%3Cdiv%3E%0A%09%09%3Cc-input%20v-model%3D%22value%22%20%2F%3E%0A%09%09%3Cc-input%20v-model%3D%22value%22%20append%3D%22px%22%20%2F%3E%0A%09%09%3Cc-input%20v-model%3D%22value%22%20iconAppend%3D%22checkmark%22%20%2F%3E%0A%09%3C%2Fdiv%3E%0A%3C%2Ftemplate%3E%0A%3Cscript%3E%0A%09export%20default%20%7B%0A%09%09data()%20%7B%0A%09%09%09return%20%7B%0A%09%09%09%09value%3A%20''%2C%0A%09%09%09%7D%0A%09%09%7D%2C%0A%09%7D%0A%3C%2Fscript%3E%0A" class="vuepress-plugin-demo-block__wrapper" style="display:none;"><div class="vuepress-plugin-demo-block__display"><div class="vuepress-plugin-demo-block__app"></div></div> <div class="vuepress-plugin-demo-block__code"><div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>c-input</span> <span class="token attr-name">v-model</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>value<span class="token punctuation">&quot;</span></span> <span class="token punctuation">/&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>c-input</span> <span class="token attr-name">v-model</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>value<span class="token punctuation">&quot;</span></span> <span class="token attr-name">append</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>px<span class="token punctuation">&quot;</span></span> <span class="token punctuation">/&gt;</span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>c-input</span> <span class="token attr-name">v-model</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>value<span class="token punctuation">&quot;</span></span> <span class="token attr-name">iconAppend</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>checkmark<span class="token punctuation">&quot;</span></span> <span class="token punctuation">/&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+	<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+		<span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+			<span class="token keyword">return</span> <span class="token punctuation">{</span>
+				<span class="token literal-property property">value</span><span class="token operator">:</span> <span class="token string">''</span><span class="token punctuation">,</span>
+			<span class="token punctuation">}</span>
+		<span class="token punctuation">}</span><span class="token punctuation">,</span>
+	<span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div></div> <div class="vuepress-plugin-demo-block__footer"></div></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/comps/column.html" class="prev">
+        Column 纵向布局
+      </a></span> <span class="next"><a href="/comps/label.html">
+        Label 标签
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.f78fdfce.js" defer></script><script src="/assets/js/2.bb013881.js" defer></script><script src="/assets/js/12.16d46f53.js" defer></script>
+  </body>
+</html>
