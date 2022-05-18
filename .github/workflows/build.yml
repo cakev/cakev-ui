@@ -25,8 +25,6 @@ jobs:
             - name: Deploy
               uses: JamesIves/github-pages-deploy-action@v4.3.3
               with:
-                  repo: git@github.com:cakev/cakev-ui-doc.git
                   branch: gh-pages
                   folder: docs/.vuepress/dist
                   token: ${{ secrets.ACCESS_TOKEN }}
-                  ssh-key: ${{ secrets.DEPLOY_PRIVATE_KEY }}
