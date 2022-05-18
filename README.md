@@ -6,7 +6,7 @@
 ![https://www.npmjs.org/package/@cakev/ui](https://img.shields.io/npm/v/@cakev/ui.svg)
 ![http://img.badgesize.io/https://unpkg.com/@cakev/ui/dist/cakev.umd.min.js?compression=gzip&label=gzip%20size:%20JS](http://img.badgesize.io/https://unpkg.com/@cakev/ui/dist/ui.umd.min.js?compression=gzip&label=gzip%20size:%20JS)
 ![http://img.badgesize.io/https://unpkg.com/@cakev/ui/dist/cakev.css?compression=gzip&label=gzip%20size:%20CSS](http://img.badgesize.io/https://unpkg.com/@cakev/ui/dist/ui.css?compression=gzip&label=gzip%20size:%20CSS)
-![https://app.travis-ci.com/github/cakev/cakev-ui](https://app.travis-ci.com/cakev/cakev-ui.svg?branch=master&status=created)
+[![Node.js CI](https://github.com/cakev/cakev-ui/actions/workflows/build.yml/badge.svg)](https://github.com/cakev/cakev-ui/actions/workflows/build.yml)
 ![](https://img.shields.io/badge/License-MIT-yellow.svg)
 
 ## 许可证
