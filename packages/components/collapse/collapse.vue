@@ -3,7 +3,7 @@ CCollapseDefault(v-if="type === 'default'", v-bind="{ ...$props, ...$attrs }", v
 	slot
 CCollapseEye(v-else-if="type === 'eye'", v-bind="{ ...$props, ...$attrs }", v-on="$listeners")
 	slot
-CCollapseList(v-else, v-bind="{ ...$props, ...$attrs }", v-on="$listeners", v-model="index")
+CCollapseList(v-else, v-bind="{ ...$props, ...$attrs }", v-on="$listeners", v-model="index", :index="index")
 	slot(:index="index")
 </template>
 <script lang="ts">
@@ -53,6 +53,7 @@ export default {
 
 	&.active {
 		padding: 10px;
+		overflow: inherit;
 	}
 }
 .c-collapse-title-right {

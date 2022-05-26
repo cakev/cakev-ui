@@ -37,8 +37,8 @@
 	c-input(v-model="collapse1")
 	c-collapse(type="list", @add-click="add", @remove-click="remove", :list="list")
 		template(v-slot="dataDefault")
-			c-input(v-model="list[dataDefault.index].text")
-			span {{ list[dataDefault.index].text }}
+			c-input(v-model="list[dataDefault.index].text", v-if="list[dataDefault.index]")
+			span(v-if="list[dataDefault.index]") {{ list[dataDefault.index].text }}
 	c-collapse(
 		label="基础属性",
 		v-model="collapse1",
@@ -88,12 +88,12 @@
 	c-select(v-model="select")
 		c-select-option(label="1111", :value="1")
 		c-select-option(label="2222", :value="2")
-	c-select(v-model="select", disabled)
-		c-select-option(label="1111", :value="1")
-		c-select-option(label="2222", :value="2")
-	c-select(v-model="select", :border="false")
-		c-select-option(label="1111", :value="1")
-		c-select-option(label="2222", :value="2")
+	//c-select(v-model="select", disabled)
+	//	c-select-option(label="1111", :value="1")
+	//	c-select-option(label="2222", :value="2")
+	//c-select(v-model="select", :border="false")
+	//	c-select-option(label="1111", :value="1")
+	//	c-select-option(label="2222", :value="2")
 	c-upload-img
 </template>
 <script lang="ts">

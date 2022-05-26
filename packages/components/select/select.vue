@@ -1,10 +1,13 @@
 <template lang="pug">
-c-row.c-select(:class="{'c-select-disabled':disabled,'c-select-focus':focus,'c-select-no-border':!border}" v-click-outside="hidePanel")
-	.c-select-content(@click="taggerPanel" @click.stop)
-		.c-input-placeholder(v-if="!currentVal") {{placeholder}}
-		span {{label}}
-	c-svg.c-select-clearable(v-if="clearable && currentVal" type="add" :size="14" @click="handleClear" @click.stop)
-	c-svg.c-select-icon(type="arrow-down" :size="14" @click="taggerPanel" @click.stop)
+c-row.c-select(
+	:class="{ 'c-select-disabled': disabled, 'c-select-focus': focus, 'c-select-no-border': !border }",
+	v-click-outside="hidePanel"
+)
+	.c-select-content(@click="taggerPanel", @click.stop)
+		.c-input-placeholder(v-if="!currentVal") {{ placeholder }}
+		span {{ label }}
+	c-svg.c-select-clearable(v-if="clearable && currentVal", type="add", :size="14", @click="handleClear", @click.stop)
+	c-svg.c-select-icon(type="arrow-down", :size="14", @click="taggerPanel", @click.stop)
 	.c-select-option-list(v-show="showList")
 		slot
 </template>
@@ -105,11 +108,12 @@ export default {
 }
 .c-select-option-list {
 	position: absolute;
-	top: calc(100% + 1px);
+	top: calc(100% + 4px);
 	left: 0;
 	width: 100%;
 	max-height: 28 * 5px;
 	overflow-y: auto;
+	border-radius: var(--panelBorderRadius);
 	box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
 }
 .c-select-clearable {
