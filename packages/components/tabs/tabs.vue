@@ -1,7 +1,11 @@
 <template lang="pug">
 c-column.c-tabs
 	c-row.c-tabs-list
-		.c-tabs-item(v-for="(item,index) in list" :class="{active:item.value===currentVal,self:list.length===1}" @click="handleClick(index)") {{item.label}}
+		.c-tabs-item(
+			v-for="(item, index) in list",
+			:class="{ active: item.value === currentVal, self: list.length === 1 }",
+			@click="handleClick(index)"
+		) {{ item.label }}
 	.c-tabs-children
 		slot
 </template>
@@ -30,9 +34,6 @@ export default {
 			immediate: true,
 		},
 	},
-	mounted() {
-		this.init()
-	},
 	methods: {
 		handleClick(index) {
 			this.currentVal = this.list[index].value
@@ -43,8 +44,10 @@ export default {
 				}
 			})
 			this.$emit('input', this.list[index].value)
+			this.$emit('change', this.list[index].value)
 		},
 		init() {
+			this.list = []
 			this.children = findComponentsDownward(this, 'c-tab-pane')
 			if (this.children) {
 				this.children.forEach(child => {

@@ -3,6 +3,8 @@
 	slot
 </template>
 <script lang="ts">
+import { findComponentUpward } from '@cakev/util'
+
 export default {
 	name: 'c-tab-pane',
 	props: {
@@ -17,6 +19,10 @@ export default {
 		return {
 			active: false,
 		}
+	},
+	mounted() {
+		const parent = findComponentUpward(this, 'c-tabs')
+		parent.init()
 	},
 }
 </script>

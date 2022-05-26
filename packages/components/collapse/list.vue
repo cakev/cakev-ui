@@ -1,12 +1,11 @@
 <template lang="pug">
 .c-collapse.c-collapse-list
 	c-collapse-default(:label="label", :icon="icon", @icon-click="handleClick")
-		.c-collapse-list-tab(v-if="list.length > 0")
-			span(@click="handleClickTab(i)", v-for="(v, i) in list", :class="{ active: index === i }") {{ prefix }}{{ i + 1 }}
+		c-tabs(v-if="list.length > 0", v-model="currentIndex", @change="handleChange")
+			c-tab-pane(v-for="(v, i) in list", :label="`${prefix}${i + 1}`", :value="i")
+				slot(v-if="i === currentIndex")
 		.c-collapse-list-empty(v-else)
 			span 暂无数据
-		template(v-for="(v, i) in list")
-			slot(:index="i", :activeIndex="index", :data="v" v-if="i === index")
 </template>
 <script lang="ts">
 import CCollapseDefault from './default.vue'
@@ -15,6 +14,9 @@ export default {
 	name: 'c-collapse-list',
 	components: { CCollapseDefault },
 	props: {
+		index: {
+			type: Number,
+		},
 		label: {
 			type: String,
 		},
@@ -30,26 +32,32 @@ export default {
 			default: () => [],
 		},
 	},
-	data() {
+	data(props) {
 		return {
-			index: 0,
+			currentIndex: props.index,
 			icon: [
 				{ icon: 'add', msg: '加一个' },
 				{ icon: 'remove', msg: '减一个' },
 			],
 		}
 	},
+	watch: {
+		index(val) {
+			this.currentIndex = val
+		},
+	},
 	methods: {
-		handleClickTab(index: number): void {
-			this.index = index
+		handleChange(index) {
+			this.$emit('input', index)
 		},
 		handleClick(value: string): void {
 			if (value === 'add') {
 				this.$emit('add-click')
 			}
 			if (value === 'remove') {
-				this.$emit('remove-click', this.index)
-				this.index = 0
+				this.$emit('remove-click', this.currentIndex)
+				this.currentIndex = 0
+				this.$emit('input', this.currentIndex)
 			}
 		},
 	},
@@ -73,27 +81,6 @@ export default {
 		padding: 5px 10px 10px 10px;
 		font-size: 12px;
 		color: #bfbfbf;
-	}
-}
-
-.c-collapse-list-tab {
-	display: flex;
-	flex-direction: row;
-	padding: 5px 10px 0 10px;
-	margin-bottom: 10px;
-	border-bottom: 1px solid #393b4a;
-	span {
-		padding-bottom: 5px;
-		margin-right: 10px;
-		cursor: pointer;
-		&:last-child {
-			margin-bottom: 0;
-		}
-
-		&.active {
-			color: var(--themeColor);
-			border-bottom: 1px solid var(--themeColor);
-		}
 	}
 }
 </style>

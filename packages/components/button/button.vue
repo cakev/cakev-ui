@@ -1,8 +1,10 @@
 <template lang="pug">
 button.c-button(
-	:class="{[`c-button-${type}`]:true,'c-button-disabled':disabled}" 
-	v-bind="{ ...$props, ...$attrs }", @click="handleClick")
-	c-row(:style="{justifyContent: 'center',height: '100%'}")
+	:class="{ [`c-button-${type}`]: true, 'c-button-disabled': disabled }",
+	v-bind="{ ...$props, ...$attrs }",
+	@click="handleClick"
+)
+	c-row(:style="{ justifyContent: 'center', height: '100%' }")
 		span
 			slot
 </template>
@@ -49,7 +51,7 @@ export default {
 	border-radius: var(--panelBorderRadius);
 	transition: all 0.3s;
 	&.c-button-primary {
-		color: var(--panelFontColor);
+		color: #fff;
 		background-color: var(--themeColor);
 		border-color: var(--themeColor);
 	}

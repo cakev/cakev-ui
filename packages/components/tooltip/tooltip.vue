@@ -1,11 +1,16 @@
 <template lang="pug">
-.c-tooltip(@mouseenter="handleShowPopper" @mouseleave="handleClosePopper" v-on="$listeners" :class="{'c-tooltip-hover':visible}")
+.c-tooltip(
+	@mouseenter="handleShowPopper",
+	@mouseleave="handleClosePopper",
+	v-on="$listeners",
+	:class="{ 'c-tooltip-hover': visible }"
+)
 	.c-tooltip-body
 		slot
 	transition(name="transition-fade")
-		.c-tooltip-content(v-show="visible" :class="`c-tooltip-content-${placement}`")
+		.c-tooltip-content(v-show="visible", :class="`c-tooltip-content-${placement}`")
 			.c-tooltip-arrow(:class="`c-tooltip-arrow-${placement}`")
-			.c-tooltip-inner {{content}}
+			.c-tooltip-inner {{ content }}
 </template>
 <script lang="ts">
 export default {
@@ -116,6 +121,7 @@ export default {
 	max-width: 250px;
 	min-height: 34px;
 	padding: 8px 12px;
+	color: var(--panelFontColor);
 	text-align: left;
 	text-decoration: none;
 	white-space: nowrap;

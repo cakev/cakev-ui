@@ -1,10 +1,10 @@
 <template lang="pug">
-CCollapseDefault(v-if="type==='default'" v-bind="{...$props,...$attrs}", v-on="$listeners")
+CCollapseDefault(v-if="type === 'default'", v-bind="{ ...$props, ...$attrs }", v-on="$listeners")
 	slot
-CCollapseEye(v-else-if="type==='eye'" v-bind="{...$props,...$attrs}", v-on="$listeners")
+CCollapseEye(v-else-if="type === 'eye'", v-bind="{ ...$props, ...$attrs }", v-on="$listeners")
 	slot
-CCollapseList(v-else v-bind="{...$props,...$attrs}", v-on="$listeners")
-	slot
+CCollapseList(v-else, v-bind="{ ...$props, ...$attrs }", v-on="$listeners", v-model="index")
+	slot(:index="index")
 </template>
 <script lang="ts">
 import CCollapseDefault from './default.vue'
@@ -23,6 +23,11 @@ export default {
 			type: String,
 			default: 'default',
 		},
+	},
+	data() {
+		return {
+			index: 0,
+		}
 	},
 }
 </script>
@@ -55,6 +60,12 @@ export default {
 	flex-direction: row;
 	margin-right: 10px;
 	margin-left: auto;
+	.c-tooltip {
+		margin-right: 5px;
+		&:last-child {
+			margin-right: 0;
+		}
+	}
 }
 .c-collapse-title {
 	display: flex;
