@@ -1,12 +1,12 @@
 <template lang="pug">
-.c-drawer(v-transfer-dom :data-transfer="transfer")
+.c-drawer(v-transfer-dom, :data-transfer="transfer")
 	.c-drawer-mask(v-show="currentVal")
-	.c-drawer-wrap(v-show="currentVal" @click="close")
-	transition(name="transition-slideRight" :style="{width}")
+	.c-drawer-wrap(v-show="currentVal", @click="close")
+	transition(name="transition-slideRight", :style="{ width }")
 		.c-drawer-right(v-show="currentVal")
 			.c-drawer-header 
-				span {{title}}
-				c-svg.c-drawer-close(type="close" @click="close")
+				span {{ title }}
+				c-svg.c-drawer-close(type="close", @click="close")
 			.c-drawer-body
 				slot
 </template>
@@ -72,6 +72,7 @@ export default {
 }
 .c-drawer-close {
 	margin-right: 8px;
+	color: var(--panelFontColor);
 	cursor: pointer;
 }
 .c-drawer-header {
@@ -83,6 +84,7 @@ export default {
 	font-size: 16px;
 	font-weight: 500;
 	line-height: 48px;
+	color: var(--panelFontColor);
 	text-overflow: ellipsis;
 	white-space: nowrap;
 	span {
